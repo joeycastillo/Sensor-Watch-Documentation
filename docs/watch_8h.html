@@ -68,6 +68,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">watch.h File Reference</div>  </div>
@@ -80,6 +82,25 @@ $(function() {
 </div>
 <p><a href="watch_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga12f90dd93f63366e5a08f161e5f6c9f5"><td class="memItemLeft" align="right" valign="top">
+typedef enum WatchIndicatorSegment&#160;</td><td class="memItemRight" valign="bottom"><b>WatchIndicatorSegment</b></td></tr>
+<tr class="separator:ga12f90dd93f63366e5a08f161e5f6c9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga37a28bfc539ea2bb83107d59f77b20d2"><td class="memItemLeft" align="right" valign="top"><a id="ga37a28bfc539ea2bb83107d59f77b20d2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>WatchIndicatorSegment</b> { <br />
+&#160;&#160;<b>WATCH_INDICATOR_SIGNAL</b> = 0
+, <b>WATCH_INDICATOR_BELL</b>
+, <b>WATCH_INDICATOR_PM</b>
+, <b>WATCH_INDICATOR_24H</b>
+, <br />
+&#160;&#160;<b>WATCH_INDICATOR_LAP</b>
+<br />
+ }</td></tr>
+<tr class="separator:ga37a28bfc539ea2bb83107d59f77b20d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga8c6e58bb7e2a0dcf8537fc940ebfa385"><td class="memItemLeft" align="right" valign="top">
@@ -113,14 +134,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memdesc:ga4321edd24b155ae143e94c623cfd27de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the Segment LCD display. Call this before attempting to set pixels or display strings. <br /></td></tr>
 <tr class="separator:ga4321edd24b155ae143e94c623cfd27de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga47948dc2c7490b698810ef9914507e08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga47948dc2c7490b698810ef9914507e08">watch_set_pixel</a> (uint8_t com, uint8_t seg)</td></tr>
-<tr class="memdesc:ga47948dc2c7490b698810ef9914507e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pixel. Use this to manually set a pixel with a given common and segment number.  <a href="group__slcd.html#ga47948dc2c7490b698810ef9914507e08">More...</a><br /></td></tr>
+<tr class="memdesc:ga47948dc2c7490b698810ef9914507e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pixel. Use this to manually set a pixel with a given common and segment number. See <a href="segmap.html">segmap.html</a>.  <a href="group__slcd.html#ga47948dc2c7490b698810ef9914507e08">More...</a><br /></td></tr>
 <tr class="separator:ga47948dc2c7490b698810ef9914507e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabd583acd4aa18b6377478bf95bdac9b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#gabd583acd4aa18b6377478bf95bdac9b0">watch_clear_pixel</a> (uint8_t com, uint8_t seg)</td></tr>
-<tr class="memdesc:gabd583acd4aa18b6377478bf95bdac9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears a pixel. Use this to manually clear a pixel with a given common and segment number.  <a href="group__slcd.html#gabd583acd4aa18b6377478bf95bdac9b0">More...</a><br /></td></tr>
+<tr class="memdesc:gabd583acd4aa18b6377478bf95bdac9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears a pixel. Use this to manually clear a pixel with a given common and segment number. See <a href="segmap.html">segmap.html</a>.  <a href="group__slcd.html#gabd583acd4aa18b6377478bf95bdac9b0">More...</a><br /></td></tr>
 <tr class="separator:gabd583acd4aa18b6377478bf95bdac9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1983cf1e6a7d8feb1c7193a182ff683d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga1983cf1e6a7d8feb1c7193a182ff683d">watch_display_string</a> (char *string, uint8_t position)</td></tr>
 <tr class="memdesc:ga1983cf1e6a7d8feb1c7193a182ff683d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a string at the given position, starting from the top left. There are ten digits. A space in any position will clear that digit.  <a href="group__slcd.html#ga1983cf1e6a7d8feb1c7193a182ff683d">More...</a><br /></td></tr>
 <tr class="separator:ga1983cf1e6a7d8feb1c7193a182ff683d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09db566516dd24acdcc912a46ef532ff"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga09db566516dd24acdcc912a46ef532ff">watch_set_colon</a> ()</td></tr>
+<tr class="memdesc:ga09db566516dd24acdcc912a46ef532ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the colon segment on. <br /></td></tr>
+<tr class="separator:ga09db566516dd24acdcc912a46ef532ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga59ab5282dca993e740e422a158c96d98"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga59ab5282dca993e740e422a158c96d98">watch_clear_colon</a> ()</td></tr>
+<tr class="memdesc:ga59ab5282dca993e740e422a158c96d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the colon segment off. <br /></td></tr>
+<tr class="separator:ga59ab5282dca993e740e422a158c96d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6640c8b372933de978e1066aed7e7fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#gaa6640c8b372933de978e1066aed7e7fd">watch_set_indicator</a> (WatchIndicatorSegment indicator)</td></tr>
+<tr class="memdesc:gaa6640c8b372933de978e1066aed7e7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an indicator on the LCD. Use this to turn on one of the indicator segments.  <a href="group__slcd.html#gaa6640c8b372933de978e1066aed7e7fd">More...</a><br /></td></tr>
+<tr class="separator:gaa6640c8b372933de978e1066aed7e7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54ee46bb4eb85e136a05af499889f50e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga54ee46bb4eb85e136a05af499889f50e">watch_clear_indicator</a> (WatchIndicatorSegment indicator)</td></tr>
+<tr class="memdesc:ga54ee46bb4eb85e136a05af499889f50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears an indicator on the LCD. Use this to turn off one of the indicator segments.  <a href="group__slcd.html#ga54ee46bb4eb85e136a05af499889f50e">More...</a><br /></td></tr>
+<tr class="separator:ga54ee46bb4eb85e136a05af499889f50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4ed473c7b2efdd3681e318f919f69b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#gaa4ed473c7b2efdd3681e318f919f69b1">watch_clear_all_indicators</a> ()</td></tr>
+<tr class="memdesc:gaa4ed473c7b2efdd3681e318f919f69b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all indicator segments.  <a href="group__slcd.html#gaa4ed473c7b2efdd3681e318f919f69b1">More...</a><br /></td></tr>
+<tr class="separator:gaa4ed473c7b2efdd3681e318f919f69b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad83cd70d15bdc69f8c13580f9cc16d1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gad83cd70d15bdc69f8c13580f9cc16d1c">watch_enable_led</a> (bool pwm)</td></tr>
 <tr class="memdesc:gad83cd70d15bdc69f8c13580f9cc16d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the LED.  <a href="group__led.html#gad83cd70d15bdc69f8c13580f9cc16d1c">More...</a><br /></td></tr>
 <tr class="separator:gad83cd70d15bdc69f8c13580f9cc16d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
