@@ -70,7 +70,8 @@ $(function() {
   <div class="summary">
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">watch.h File Reference</div>  </div>
 </div><!--header-->
@@ -79,6 +80,7 @@ $(function() {
 <code>#include &quot;driver_init.h&quot;</code><br />
 <code>#include &quot;hpl_calendar.h&quot;</code><br />
 <code>#include &quot;hal_ext_irq.h&quot;</code><br />
+<code>#include &quot;notes.h&quot;</code><br />
 </div>
 <p><a href="watch_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -186,6 +188,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gad11f5e13becf4fbc6211583c249d6e21">watch_set_led_off</a> ()</td></tr>
 <tr class="memdesc:gad11f5e13becf4fbc6211583c249d6e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets both red and green LEDs to full brightness. <br /></td></tr>
 <tr class="separator:gad11f5e13becf4fbc6211583c249d6e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4be0be2a7f2d4389a24ed0878a3b2bfd"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga4be0be2a7f2d4389a24ed0878a3b2bfd">watch_enable_buzzer</a> ()</td></tr>
+<tr class="memdesc:ga4be0be2a7f2d4389a24ed0878a3b2bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the TCC peripheral, which drives the buzzer. <br /></td></tr>
+<tr class="separator:ga4be0be2a7f2d4389a24ed0878a3b2bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77f213418f48937de73bfe7ac5fc58c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga77f213418f48937de73bfe7ac5fc58c9">watch_set_buzzer_period</a> (uint32_t period)</td></tr>
+<tr class="memdesc:ga77f213418f48937de73bfe7ac5fc58c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the period of the buzzer.  <a href="group__buzzer.html#ga77f213418f48937de73bfe7ac5fc58c9">More...</a><br /></td></tr>
+<tr class="separator:ga77f213418f48937de73bfe7ac5fc58c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f608f6c7bed56e7435a1e3f5708ed2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga5f608f6c7bed56e7435a1e3f5708ed2e">watch_set_buzzer_on</a> ()</td></tr>
+<tr class="memdesc:ga5f608f6c7bed56e7435a1e3f5708ed2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the buzzer output on. It will emit a continuous sound at the given frequency.  <a href="group__buzzer.html#ga5f608f6c7bed56e7435a1e3f5708ed2e">More...</a><br /></td></tr>
+<tr class="separator:ga5f608f6c7bed56e7435a1e3f5708ed2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4a632c9ed1670c3e3140cd6a643d596"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#gab4a632c9ed1670c3e3140cd6a643d596">watch_set_buzzer_off</a> ()</td></tr>
+<tr class="memdesc:gab4a632c9ed1670c3e3140cd6a643d596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the buzzer output off. <br /></td></tr>
+<tr class="separator:gab4a632c9ed1670c3e3140cd6a643d596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b6ece8107c1f2bedf80d5584d204b80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga1b6ece8107c1f2bedf80d5584d204b80">watch_buzzer_play_note</a> (BuzzerNote note, uint16_t duration_ms)</td></tr>
+<tr class="memdesc:ga1b6ece8107c1f2bedf80d5584d204b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the given note for a set duration.  <a href="group__buzzer.html#ga1b6ece8107c1f2bedf80d5584d204b80">More...</a><br /></td></tr>
+<tr class="separator:ga1b6ece8107c1f2bedf80d5584d204b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9dc0424ce913f833dd9bd20e70257242"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga9dc0424ce913f833dd9bd20e70257242">_watch_rtc_is_enabled</a> ()</td></tr>
 <tr class="separator:ga9dc0424ce913f833dd9bd20e70257242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacdb972e0c12f8e70e6c430118ea986f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gacdb972e0c12f8e70e6c430118ea986f8">watch_set_date_time</a> (struct calendar_date_time date_time)</td></tr>
@@ -264,6 +283,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:gad37a6fd46f2d8b72cd371660c2d3af77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#gad37a6fd46f2d8b72cd371660c2d3af77">watch_enter_deep_sleep</a> ()</td></tr>
 <tr class="memdesc:gad37a6fd46f2d8b72cd371660c2d3af77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters the SAM L22's lowest-power mode, BACKUP.  <a href="group__deepsleep.html#gad37a6fd46f2d8b72cd371660c2d3af77">More...</a><br /></td></tr>
 <tr class="separator:gad37a6fd46f2d8b72cd371660c2d3af77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga747b4014093d6a71b6d8fba2db41696b"><td class="memItemLeft" align="right" valign="top">
+const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga747b4014093d6a71b6d8fba2db41696b">NotePeriods</a> [108]</td></tr>
+<tr class="memdesc:ga747b4014093d6a71b6d8fba2db41696b"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array of periods for all the notes on a piano, corresponding to the names in BuzzerNote. <br /></td></tr>
+<tr class="separator:ga747b4014093d6a71b6d8fba2db41696b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

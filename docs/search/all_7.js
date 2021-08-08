@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['segment_20lcd_20display_16',['Segment LCD Display',['../group__slcd.html',1,'']]],
-  ['sensor_20watch_20documentation_17',['Sensor Watch Documentation',['../index.html',1,'']]]
+  ['real_2dtime_20clock_17',['Real-Time Clock',['../group__rtc.html',1,'']]]
 ];
