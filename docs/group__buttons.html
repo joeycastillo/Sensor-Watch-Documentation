@@ -75,19 +75,38 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="memItemLeft" align="right" valign="top"><a id="gaf343d2ffcbac61c808e31b2ae871bf94"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">watch_enable_buttons</a> ()</td></tr>
-<tr class="memdesc:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the external interrupt controller. <br /></td></tr>
+<tr class="memitem:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">watch_enable_buttons</a> ()</td></tr>
+<tr class="memdesc:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the external interrupt controller for use with the buttons.  <a href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">More...</a><br /></td></tr>
 <tr class="separator:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2d44c9e1d0d61fa57b79369ba4b8de8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#ga2d44c9e1d0d61fa57b79369ba4b8de8a">watch_register_button_callback</a> (const uint32_t pin, ext_irq_cb_t callback)</td></tr>
-<tr class="memdesc:ga2d44c9e1d0d61fa57b79369ba4b8de8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures an external interrupt.  <a href="group__buttons.html#ga2d44c9e1d0d61fa57b79369ba4b8de8a">More...</a><br /></td></tr>
-<tr class="separator:ga2d44c9e1d0d61fa57b79369ba4b8de8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2aaf9639d995df391f61d5b3477922b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">watch_register_button_callback</a> (const uint8_t pin, ext_irq_cb_t callback)</td></tr>
+<tr class="memdesc:gab2aaf9639d995df391f61d5b3477922b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures an external interrupt.  <a href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">More...</a><br /></td></tr>
+<tr class="separator:gab2aaf9639d995df391f61d5b3477922b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This section covers functions related to the three buttons: Light, Mode and Alarm. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga2d44c9e1d0d61fa57b79369ba4b8de8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2d44c9e1d0d61fa57b79369ba4b8de8a">&#9670;&nbsp;</a></span>watch_register_button_callback()</h2>
+<a id="gaf343d2ffcbac61c808e31b2ae871bf94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf343d2ffcbac61c808e31b2ae871bf94">&#9670;&nbsp;</a></span>watch_enable_buttons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void watch_enable_buttons </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables the external interrupt controller for use with the buttons. </p>
+<dl class="section note"><dt>Note</dt><dd>The BTN_ALARM button runs off of an interrupt in the the RTC controller, not the EIC. If your application ONLY makes use of the alarm button, you do not need to call this method; you can save ~5µA by leaving the EIC disabled and only registering a callback for BTN_ALARM. </dd></dl>
+
+</div>
+</div>
+<a id="gab2aaf9639d995df391f61d5b3477922b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2aaf9639d995df391f61d5b3477922b">&#9670;&nbsp;</a></span>watch_register_button_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -95,7 +114,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
         <tr>
           <td class="memname">void watch_register_button_callback </td>
           <td>(</td>
-          <td class="paramtype">const uint32_t&#160;</td>
+          <td class="paramtype">const uint8_t&#160;</td>
           <td class="paramname"><em>pin</em>, </td>
         </tr>
         <tr>
@@ -120,7 +139,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Make the alarm interrupt use the RTC tamper interrupt instead of the EIC. </dd></dl>
 
 </div>
 </div>
