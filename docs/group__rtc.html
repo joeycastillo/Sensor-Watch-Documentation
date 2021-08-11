@@ -75,7 +75,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga9dc0424ce913f833dd9bd20e70257242"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga9dc0424ce913f833dd9bd20e70257242">_watch_rtc_is_enabled</a> ()</td></tr>
+<tr class="memitem:ga9dc0424ce913f833dd9bd20e70257242"><td class="memItemLeft" align="right" valign="top"><a id="ga9dc0424ce913f833dd9bd20e70257242"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga9dc0424ce913f833dd9bd20e70257242">_watch_rtc_is_enabled</a> ()</td></tr>
+<tr class="memdesc:ga9dc0424ce913f833dd9bd20e70257242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by main.c to check if the RTC is enabled. You may call this function, but outside of app_init, it sbould always return true. <br /></td></tr>
 <tr class="separator:ga9dc0424ce913f833dd9bd20e70257242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacdb972e0c12f8e70e6c430118ea986f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gacdb972e0c12f8e70e6c430118ea986f8">watch_set_date_time</a> (struct calendar_date_time date_time)</td></tr>
 <tr class="memdesc:gacdb972e0c12f8e70e6c430118ea986f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the system date and time.  <a href="group__rtc.html#gacdb972e0c12f8e70e6c430118ea986f8">More...</a><br /></td></tr>
@@ -89,25 +91,8 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This section covers functions related to the SAM L22's real-time clock peripheral, including date, time and alarm functions. </p>
+<p>The real-time clock is the only peripheral that main.c enables for you. It is the cornerstone of low power operation on the watch, and it is required for several key functions that we assume will be available, namely the wake from BACKUP mode and the callback on the ALARM button. It is also required for the operation of the 1 Hz tick interrupt, which you will most likely use to wake from STANDBY mode. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga9dc0424ce913f833dd9bd20e70257242"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9dc0424ce913f833dd9bd20e70257242">&#9670;&nbsp;</a></span>_watch_rtc_is_enabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool _watch_rtc_is_enabled </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Called by main.c to check if the RTC is enabled. </p>
-
-</div>
-</div>
 <a id="gaa17f684d144858f20a7f9c080139b27f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa17f684d144858f20a7f9c080139b27f">&#9670;&nbsp;</a></span>watch_get_date_time()</h2>
 

@@ -131,7 +131,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This section covers functions related to the Segment LCD display driver, which is responsible for displaying strings of characters and indicators on the main watch display. </p>
-<p>For a map of all common and segment pins, see <a href="segmap.html">segmap.html</a>. You can hover over any segment in that diagram to view the common and segment pins associated with each segment of the display. </p>
+<p>The segment LCD controller consumes about 3 microamperes of power with no segments on, and about 4 microamperes with all segments on. There is also a slight power impact associated with updating the screen (about 1 microampere to update at 1 Hz). For the absolute lowest power operation, update the display only when its contents have changed, and disable the SLCD peripheral when the screen is not in use. For a map of all common and segment pins, see <a href="segmap.html">segmap.html</a>. You can hover over any segment in that diagram to view the common and segment pins associated with each segment of the display. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga37a28bfc539ea2bb83107d59f77b20d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga37a28bfc539ea2bb83107d59f77b20d2">&#9670;&nbsp;</a></span>WatchIndicatorSegment</h2>

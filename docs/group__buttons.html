@@ -79,11 +79,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the external interrupt controller for use with the buttons.  <a href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">More...</a><br /></td></tr>
 <tr class="separator:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab2aaf9639d995df391f61d5b3477922b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">watch_register_button_callback</a> (const uint8_t pin, ext_irq_cb_t callback)</td></tr>
-<tr class="memdesc:gab2aaf9639d995df391f61d5b3477922b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures an external interrupt.  <a href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">More...</a><br /></td></tr>
+<tr class="memdesc:gab2aaf9639d995df391f61d5b3477922b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures an external interrupt on one of the button pins.  <a href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">More...</a><br /></td></tr>
 <tr class="separator:gab2aaf9639d995df391f61d5b3477922b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This section covers functions related to the three buttons: Light, Mode and Alarm. </p>
+<p>The buttons are the core input UI of the watch, and the way the user will interact with your application. They are active high, pulled down by the microcontroller, and triggered when one of the "pushers" brings a tab from the metal frame into contact with the edge of the board. Note that the buttons can only wake the watch from STANDBY mode (except maybe for the ALARM button; still working on that one). The external interrupt controller runs in STANDBY mode, but it does not runin BACKUP mode; to wake from BACKUP, buttons will not cut it, </p>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf343d2ffcbac61c808e31b2ae871bf94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf343d2ffcbac61c808e31b2ae871bf94">&#9670;&nbsp;</a></span>watch_enable_buttons()</h2>
@@ -131,7 +132,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures an external interrupt. </p>
+<p>Configures an external interrupt on one of the button pins. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pin</td><td>One of pins BTN_LIGHT, BTN_MODE or BTN_ALARM. </td></tr>
@@ -139,6 +140,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>The BTN_ALARM button runs off of an interrupt in the the RTC controller, not the EIC. This implementation detail should not make any difference to your app, </dd></dl>
 
 </div>
 </div>

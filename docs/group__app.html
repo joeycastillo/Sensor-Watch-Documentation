@@ -89,9 +89,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:ga046a6b2513517514cadfdbe736b094d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga046a6b2513517514cadfdbe736b094d1">app_loop</a> ()</td></tr>
 <tr class="memdesc:ga046a6b2513517514cadfdbe736b094d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to serve as the app's main run loop. This method will be called repeatedly, or if you enter STANDBY sleep mode, as soon as the device wakes from sleep.  <a href="group__app.html#ga046a6b2513517514cadfdbe736b094d1">More...</a><br /></td></tr>
 <tr class="separator:ga046a6b2513517514cadfdbe736b094d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga025f204b9bfb4298d9d4cff2e7268357"><td class="memItemLeft" align="right" valign="top"><a id="ga025f204b9bfb4298d9d4cff2e7268357"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga025f204b9bfb4298d9d4cff2e7268357">app_prepare_for_sleep</a> ()</td></tr>
-<tr class="memdesc:ga025f204b9bfb4298d9d4cff2e7268357"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to prepare to enter STANDBY sleep mode. The app_prepare_for_sleep function is called before the watch goes into the STANDBY sleep mode. In STANDBY mode, most peripherals are shut down, and no code will run until the watch receives an interrupt (generally either the 1Hz tick or a press on one of the buttons). <br /></td></tr>
+<tr class="memitem:ga025f204b9bfb4298d9d4cff2e7268357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga025f204b9bfb4298d9d4cff2e7268357">app_prepare_for_sleep</a> ()</td></tr>
+<tr class="memdesc:ga025f204b9bfb4298d9d4cff2e7268357"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to prepare to enter STANDBY sleep mode. The app_prepare_for_sleep function is called before the watch goes into the STANDBY sleep mode. In STANDBY mode, most peripherals are shut down, and no code will run until the watch receives an interrupt (generally either the 1Hz tick or a press on one of the buttons).  <a href="group__app.html#ga025f204b9bfb4298d9d4cff2e7268357">More...</a><br /></td></tr>
 <tr class="separator:ga025f204b9bfb4298d9d4cff2e7268357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf737707ea2a96c45de9dd69551b5f0c8"><td class="memItemLeft" align="right" valign="top"><a id="gaf737707ea2a96c45de9dd69551b5f0c8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#gaf737707ea2a96c45de9dd69551b5f0c8">app_wake_from_sleep</a> ()</td></tr>
@@ -156,8 +155,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </div><div class="memdoc">
 
 <p>A function you will implement to serve as the app's main run loop. This method will be called repeatedly, or if you enter STANDBY sleep mode, as soon as the device wakes from sleep. </p>
-<dl class="section return"><dt>Returns</dt><dd>You should return true if your app is prepared to enter STANDBY sleep mode. If you return false, your app's app_loop method will be called again immediately. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>You should return true if your app is prepared to enter STANDBY sleep mode. If you return false, your app's app_loop method will be called again immediately. Note that in STANDBY mode, the watch will consume only about 95 microamperes of power, whereas if you return false and keep the app awake, it will consume about 355 microamperes. This is the difference between months of battery life and days. As much as possible, you should limit the amount of time your app spends awake. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Only the RTC, the segment LCD controller and the external interrupt controller run in STANDBY mode. If you are using, e.g. the PWM function to set a custom LED color, you should return false here until you are finished with that operation. Note however that the peripherals will continue running after waking up, so e.g. the I2C controller, if configured, will sleep in STANDBY. But you can use it again as soon as your app wakes up. </dd></dl>
+
+</div>
+</div>
+<a id="ga025f204b9bfb4298d9d4cff2e7268357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga025f204b9bfb4298d9d4cff2e7268357">&#9670;&nbsp;</a></span>app_prepare_for_sleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_prepare_for_sleep </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A function you will implement to prepare to enter STANDBY sleep mode. The app_prepare_for_sleep function is called before the watch goes into the STANDBY sleep mode. In STANDBY mode, most peripherals are shut down, and no code will run until the watch receives an interrupt (generally either the 1Hz tick or a press on one of the buttons). </p>
+<dl class="section note"><dt>Note</dt><dd>If you are PWM'ing the LED or playing a sound on the buzzer, the TC/TCC peripherals that drive those operations will not run in STANDBY. BUT! the output pins will retain the state they had when entering standby. This means you could end up entering standby with an LED on and draining power, or with a DC potential across the piezo buzzer that could damage it if left in this state. If your app_loop does not prevent sleep during these activities, you should make sure to disable these outputs in app_prepare_for_sleep. </dd></dl>
 
 </div>
 </div>
