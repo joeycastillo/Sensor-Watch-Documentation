@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sensor Watch: watch-library/watch/watch.h Source File</title>
+<title>Sensor Watch: watch-library/watch/watch_i2c.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,10 +68,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">watch.h</div>  </div>
+<div class="title">watch_i2c.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="watch_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * MIT License</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (c) 2020 Joey Castillo</span></div>
@@ -95,27 +95,31 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * SOFTWARE.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef WATCH_H_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define WATCH_H_</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;driver_init.h&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;watch_app.h&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;watch_rtc.h&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;watch_slcd.h&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;watch_extint.h&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;watch_led.h&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;watch_buzzer.h&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;watch_adc.h&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &quot;watch_gpio.h&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;watch_i2c.h&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;watch_uart.h&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;watch_deepsleep.h&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;watch_private.h&quot;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* WATCH_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__i2c.html#ga3a20ed92a76b6e74e4e3ca4b4a6823c3">watch_enable_i2c</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__i2c.html#ga8b44030f78c30dd4026b349fc0c8cf08">watch_i2c_send</a>(int16_t addr, uint8_t *buf, uint16_t length);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__i2c.html#ga426971387b87286c8decca7342c06b4b">watch_i2c_receive</a>(int16_t addr, uint8_t *buf, uint16_t length);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__i2c.html#gaf0a4c78215cbd85ab557fc6c786eb6ad">watch_i2c_write8</a>(int16_t addr, uint8_t reg, uint8_t data);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;uint8_t <a class="code" href="group__i2c.html#gac5644140ddda98198f9d5deabbeaf781">watch_i2c_read8</a>(int16_t addr, uint8_t reg);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;uint16_t <a class="code" href="group__i2c.html#gaed749d3ca5e6e3aedcf1aefed3d7663e">watch_i2c_read16</a>(int16_t addr, uint8_t reg);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;uint32_t <a class="code" href="group__i2c.html#ga6732b5655fdada88d083e4b4d05d1ca8">watch_i2c_read24</a>(int16_t addr, uint8_t reg);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;uint32_t <a class="code" href="group__i2c.html#ga3d1c750d1b228b11333d10fc9647d651">watch_i2c_read32</a>(int16_t addr, uint8_t reg);</div>
+<div class="ttc" id="agroup__i2c_html_ga3a20ed92a76b6e74e4e3ca4b4a6823c3"><div class="ttname"><a href="group__i2c.html#ga3a20ed92a76b6e74e4e3ca4b4a6823c3">watch_enable_i2c</a></div><div class="ttdeci">void watch_enable_i2c()</div><div class="ttdoc">Enables the I2C peripheral. Call this before attempting to interface with I2C devices.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:27</div></div>
+<div class="ttc" id="agroup__i2c_html_ga3d1c750d1b228b11333d10fc9647d651"><div class="ttname"><a href="group__i2c.html#ga3d1c750d1b228b11333d10fc9647d651">watch_i2c_read32</a></div><div class="ttdeci">uint32_t watch_i2c_read32(int16_t addr, uint8_t reg)</div><div class="ttdoc">Reads an unsigned little-endian int from a register in an I2C device.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:79</div></div>
+<div class="ttc" id="agroup__i2c_html_ga426971387b87286c8decca7342c06b4b"><div class="ttname"><a href="group__i2c.html#ga426971387b87286c8decca7342c06b4b">watch_i2c_receive</a></div><div class="ttdeci">void watch_i2c_receive(int16_t addr, uint8_t *buf, uint16_t length)</div><div class="ttdoc">Receives a series of values from a device on the I2C bus.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:38</div></div>
+<div class="ttc" id="agroup__i2c_html_ga6732b5655fdada88d083e4b4d05d1ca8"><div class="ttname"><a href="group__i2c.html#ga6732b5655fdada88d083e4b4d05d1ca8">watch_i2c_read24</a></div><div class="ttdeci">uint32_t watch_i2c_read24(int16_t addr, uint8_t reg)</div><div class="ttdoc">Reads three bytes as an unsigned little-endian int from a register in an I2C device.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:69</div></div>
+<div class="ttc" id="agroup__i2c_html_ga8b44030f78c30dd4026b349fc0c8cf08"><div class="ttname"><a href="group__i2c.html#ga8b44030f78c30dd4026b349fc0c8cf08">watch_i2c_send</a></div><div class="ttdeci">void watch_i2c_send(int16_t addr, uint8_t *buf, uint16_t length)</div><div class="ttdoc">Sends a series of values to a device on the I2C bus.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:33</div></div>
+<div class="ttc" id="agroup__i2c_html_gac5644140ddda98198f9d5deabbeaf781"><div class="ttname"><a href="group__i2c.html#gac5644140ddda98198f9d5deabbeaf781">watch_i2c_read8</a></div><div class="ttdeci">uint8_t watch_i2c_read8(int16_t addr, uint8_t reg)</div><div class="ttdoc">Reads a byte from a register in an I2C device.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:51</div></div>
+<div class="ttc" id="agroup__i2c_html_gaed749d3ca5e6e3aedcf1aefed3d7663e"><div class="ttname"><a href="group__i2c.html#gaed749d3ca5e6e3aedcf1aefed3d7663e">watch_i2c_read16</a></div><div class="ttdeci">uint16_t watch_i2c_read16(int16_t addr, uint8_t reg)</div><div class="ttdoc">Reads an unsigned little-endian word from a register in an I2C device.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:60</div></div>
+<div class="ttc" id="agroup__i2c_html_gaf0a4c78215cbd85ab557fc6c786eb6ad"><div class="ttname"><a href="group__i2c.html#gaf0a4c78215cbd85ab557fc6c786eb6ad">watch_i2c_write8</a></div><div class="ttdeci">void watch_i2c_write8(int16_t addr, uint8_t reg, uint8_t data)</div><div class="ttdoc">Writes a byte to a register in an I2C device.</div><div class="ttdef"><b>Definition:</b> watch_i2c.c:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

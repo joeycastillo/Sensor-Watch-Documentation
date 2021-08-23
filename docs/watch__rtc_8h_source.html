@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sensor Watch: watch-library/watch/watch.h Source File</title>
+<title>Sensor Watch: watch-library/watch/watch_rtc.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,10 +68,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">watch.h</div>  </div>
+<div class="title">watch_rtc.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="watch_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * MIT License</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (c) 2020 Joey Castillo</span></div>
@@ -95,27 +95,20 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * SOFTWARE.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef WATCH_H_</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define WATCH_H_</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;driver_init.h&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;watch_app.h&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;watch_rtc.h&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;watch_slcd.h&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;watch_extint.h&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;watch_led.h&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;watch_buzzer.h&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;watch_adc.h&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &quot;watch_gpio.h&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;watch_i2c.h&quot;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#include &quot;watch_uart.h&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#include &quot;watch_deepsleep.h&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;watch_private.h&quot;</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* WATCH_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;hpl_calendar.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__rtc.html#ga9dc0424ce913f833dd9bd20e70257242">_watch_rtc_is_enabled</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__rtc.html#gacdb972e0c12f8e70e6c430118ea986f8">watch_set_date_time</a>(<span class="keyword">struct</span> calendar_date_time date_time);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__rtc.html#gaa17f684d144858f20a7f9c080139b27f">watch_get_date_time</a>(<span class="keyword">struct</span> calendar_date_time *date_time);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__rtc.html#ga63fe17d82b7d1a0392822bca448fafd3">watch_register_tick_callback</a>(ext_irq_cb_t callback);</div>
+<div class="ttc" id="agroup__rtc_html_ga63fe17d82b7d1a0392822bca448fafd3"><div class="ttname"><a href="group__rtc.html#ga63fe17d82b7d1a0392822bca448fafd3">watch_register_tick_callback</a></div><div class="ttdeci">void watch_register_tick_callback(ext_irq_cb_t callback)</div><div class="ttdoc">Registers a &quot;tick&quot; callback that will be called once per second.</div><div class="ttdef"><b>Definition:</b> watch_rtc.c:38</div></div>
+<div class="ttc" id="agroup__rtc_html_ga9dc0424ce913f833dd9bd20e70257242"><div class="ttname"><a href="group__rtc.html#ga9dc0424ce913f833dd9bd20e70257242">_watch_rtc_is_enabled</a></div><div class="ttdeci">bool _watch_rtc_is_enabled()</div><div class="ttdoc">Called by main.c to check if the RTC is enabled. You may call this function, but outside of app_init,...</div><div class="ttdef"><b>Definition:</b> watch_rtc.c:25</div></div>
+<div class="ttc" id="agroup__rtc_html_gaa17f684d144858f20a7f9c080139b27f"><div class="ttname"><a href="group__rtc.html#gaa17f684d144858f20a7f9c080139b27f">watch_get_date_time</a></div><div class="ttdeci">void watch_get_date_time(struct calendar_date_time *date_time)</div><div class="ttdoc">Returns the system date and time in the provided struct.</div><div class="ttdef"><b>Definition:</b> watch_rtc.c:34</div></div>
+<div class="ttc" id="agroup__rtc_html_gacdb972e0c12f8e70e6c430118ea986f8"><div class="ttname"><a href="group__rtc.html#gacdb972e0c12f8e70e6c430118ea986f8">watch_set_date_time</a></div><div class="ttdeci">void watch_set_date_time(struct calendar_date_time date_time)</div><div class="ttdoc">Sets the system date and time.</div><div class="ttdef"><b>Definition:</b> watch_rtc.c:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

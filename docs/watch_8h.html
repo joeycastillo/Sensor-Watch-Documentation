@@ -67,237 +67,27 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">watch.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;driver_init.h&quot;</code><br />
-<code>#include &quot;hpl_calendar.h&quot;</code><br />
-<code>#include &quot;hal_ext_irq.h&quot;</code><br />
-<code>#include &quot;notes.h&quot;</code><br />
+<code>#include &quot;watch_app.h&quot;</code><br />
+<code>#include &quot;watch_rtc.h&quot;</code><br />
+<code>#include &quot;watch_slcd.h&quot;</code><br />
+<code>#include &quot;watch_extint.h&quot;</code><br />
+<code>#include &quot;watch_led.h&quot;</code><br />
+<code>#include &quot;watch_buzzer.h&quot;</code><br />
+<code>#include &quot;watch_adc.h&quot;</code><br />
+<code>#include &quot;watch_gpio.h&quot;</code><br />
+<code>#include &quot;watch_i2c.h&quot;</code><br />
+<code>#include &quot;watch_uart.h&quot;</code><br />
+<code>#include &quot;watch_deepsleep.h&quot;</code><br />
+<code>#include &quot;watch_private.h&quot;</code><br />
 </div>
 <p><a href="watch_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga12f90dd93f63366e5a08f161e5f6c9f5"><td class="memItemLeft" align="right" valign="top">
-typedef enum <a class="el" href="group__slcd.html#ga37a28bfc539ea2bb83107d59f77b20d2">WatchIndicatorSegment</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga12f90dd93f63366e5a08f161e5f6c9f5">WatchIndicatorSegment</a></td></tr>
-<tr class="memdesc:ga12f90dd93f63366e5a08f161e5f6c9f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum listing the icons and indicators available on the watch. <br /></td></tr>
-<tr class="separator:ga12f90dd93f63366e5a08f161e5f6c9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga37a28bfc539ea2bb83107d59f77b20d2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga37a28bfc539ea2bb83107d59f77b20d2">WatchIndicatorSegment</a> { <br />
-&#160;&#160;<a class="el" href="group__slcd.html#gga37a28bfc539ea2bb83107d59f77b20d2a827a013c00782a143f13a4f88ce50292">WATCH_INDICATOR_SIGNAL</a> = 0
-, <a class="el" href="group__slcd.html#gga37a28bfc539ea2bb83107d59f77b20d2a44727968b16d73ca11e3d19795085ee3">WATCH_INDICATOR_BELL</a>
-, <a class="el" href="group__slcd.html#gga37a28bfc539ea2bb83107d59f77b20d2a0d023567f536ace6ff82e5120729090f">WATCH_INDICATOR_PM</a>
-, <a class="el" href="group__slcd.html#gga37a28bfc539ea2bb83107d59f77b20d2aee02426fe8a094a399fe93de2f354e48">WATCH_INDICATOR_24H</a>
-, <br />
-&#160;&#160;<a class="el" href="group__slcd.html#gga37a28bfc539ea2bb83107d59f77b20d2a98d272d879d473fb507a9fc27b6741c6">WATCH_INDICATOR_LAP</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ga37a28bfc539ea2bb83107d59f77b20d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum listing the icons and indicators available on the watch.  <a href="group__slcd.html#ga37a28bfc539ea2bb83107d59f77b20d2">More...</a><br /></td></tr>
-<tr class="separator:ga37a28bfc539ea2bb83107d59f77b20d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga8c6e58bb7e2a0dcf8537fc940ebfa385"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385">app_init</a> ()</td></tr>
-<tr class="memdesc:ga8c6e58bb7e2a0dcf8537fc940ebfa385"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to initialize your application state. The app_init function is called before anything else. Use it to set up any internal data structures or application state required by your app, but don't configure any peripherals just yet. <br /></td></tr>
-<tr class="separator:ga8c6e58bb7e2a0dcf8537fc940ebfa385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5d2bdd732abd6aff9e4a75e672ba94e4"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga5d2bdd732abd6aff9e4a75e672ba94e4">app_wake_from_deep_sleep</a> ()</td></tr>
-<tr class="memdesc:ga5d2bdd732abd6aff9e4a75e672ba94e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to wake from deep sleep mode. The app_wake_from_deep_sleep function is only called if your app is waking from the ultra-low power BACKUP sleep mode. You may have chosen to store some state in the RTC's backup registers prior to entering this mode. You may restore that state here. <br /></td></tr>
-<tr class="separator:ga5d2bdd732abd6aff9e4a75e672ba94e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga236d41c9a6693e74ec116b7434714405"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga236d41c9a6693e74ec116b7434714405">app_setup</a> ()</td></tr>
-<tr class="memdesc:ga236d41c9a6693e74ec116b7434714405"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to set up your application. The app_setup function is like setup() in Arduino. It is called once when the program begins. You should set pin modes and enable any peripherals you want to set up (real-time clock, I2C, etc.) Depending on your application, you may or may not want to configure sensors on your sensor board here. For example, a low-power accelerometer that will run at all times should be configured here, whereas you may want to enable a more power-hungry sensor only when you need it.  <a href="group__app.html#ga236d41c9a6693e74ec116b7434714405">More...</a><br /></td></tr>
-<tr class="separator:ga236d41c9a6693e74ec116b7434714405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga046a6b2513517514cadfdbe736b094d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga046a6b2513517514cadfdbe736b094d1">app_loop</a> ()</td></tr>
-<tr class="memdesc:ga046a6b2513517514cadfdbe736b094d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to serve as the app's main run loop. This method will be called repeatedly, or if you enter STANDBY sleep mode, as soon as the device wakes from sleep.  <a href="group__app.html#ga046a6b2513517514cadfdbe736b094d1">More...</a><br /></td></tr>
-<tr class="separator:ga046a6b2513517514cadfdbe736b094d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga025f204b9bfb4298d9d4cff2e7268357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga025f204b9bfb4298d9d4cff2e7268357">app_prepare_for_sleep</a> ()</td></tr>
-<tr class="memdesc:ga025f204b9bfb4298d9d4cff2e7268357"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function you will implement to prepare to enter STANDBY sleep mode. The app_prepare_for_sleep function is called before the watch goes into the STANDBY sleep mode. In STANDBY mode, most peripherals are shut down, and no code will run until the watch receives an interrupt (generally either the 1Hz tick or a press on one of the buttons).  <a href="group__app.html#ga025f204b9bfb4298d9d4cff2e7268357">More...</a><br /></td></tr>
-<tr class="separator:ga025f204b9bfb4298d9d4cff2e7268357"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf737707ea2a96c45de9dd69551b5f0c8"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#gaf737707ea2a96c45de9dd69551b5f0c8">app_wake_from_sleep</a> ()</td></tr>
-<tr class="memdesc:gaf737707ea2a96c45de9dd69551b5f0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A method you will implement to configure the app after waking from STANDBY sleep mode. <br /></td></tr>
-<tr class="separator:gaf737707ea2a96c45de9dd69551b5f0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga94ddfaf6b4255a0e69d41193f08a25a2"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__app.html#ga94ddfaf6b4255a0e69d41193f08a25a2">_watch_init</a> ()</td></tr>
-<tr class="memdesc:ga94ddfaf6b4255a0e69d41193f08a25a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by main.c while setting up the app. You should not call this from your app. <br /></td></tr>
-<tr class="separator:ga94ddfaf6b4255a0e69d41193f08a25a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4321edd24b155ae143e94c623cfd27de"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga4321edd24b155ae143e94c623cfd27de">watch_enable_display</a> ()</td></tr>
-<tr class="memdesc:ga4321edd24b155ae143e94c623cfd27de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the Segment LCD display. Call this before attempting to set pixels or display strings. <br /></td></tr>
-<tr class="separator:ga4321edd24b155ae143e94c623cfd27de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga47948dc2c7490b698810ef9914507e08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga47948dc2c7490b698810ef9914507e08">watch_set_pixel</a> (uint8_t com, uint8_t seg)</td></tr>
-<tr class="memdesc:ga47948dc2c7490b698810ef9914507e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pixel. Use this to manually set a pixel with a given common and segment number. See <a href="segmap.html">segmap.html</a>.  <a href="group__slcd.html#ga47948dc2c7490b698810ef9914507e08">More...</a><br /></td></tr>
-<tr class="separator:ga47948dc2c7490b698810ef9914507e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabd583acd4aa18b6377478bf95bdac9b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#gabd583acd4aa18b6377478bf95bdac9b0">watch_clear_pixel</a> (uint8_t com, uint8_t seg)</td></tr>
-<tr class="memdesc:gabd583acd4aa18b6377478bf95bdac9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears a pixel. Use this to manually clear a pixel with a given common and segment number. See <a href="segmap.html">segmap.html</a>.  <a href="group__slcd.html#gabd583acd4aa18b6377478bf95bdac9b0">More...</a><br /></td></tr>
-<tr class="separator:gabd583acd4aa18b6377478bf95bdac9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1983cf1e6a7d8feb1c7193a182ff683d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga1983cf1e6a7d8feb1c7193a182ff683d">watch_display_string</a> (char *string, uint8_t position)</td></tr>
-<tr class="memdesc:ga1983cf1e6a7d8feb1c7193a182ff683d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a string at the given position, starting from the top left. There are ten digits. A space in any position will clear that digit.  <a href="group__slcd.html#ga1983cf1e6a7d8feb1c7193a182ff683d">More...</a><br /></td></tr>
-<tr class="separator:ga1983cf1e6a7d8feb1c7193a182ff683d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09db566516dd24acdcc912a46ef532ff"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga09db566516dd24acdcc912a46ef532ff">watch_set_colon</a> ()</td></tr>
-<tr class="memdesc:ga09db566516dd24acdcc912a46ef532ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the colon segment on. <br /></td></tr>
-<tr class="separator:ga09db566516dd24acdcc912a46ef532ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga59ab5282dca993e740e422a158c96d98"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga59ab5282dca993e740e422a158c96d98">watch_clear_colon</a> ()</td></tr>
-<tr class="memdesc:ga59ab5282dca993e740e422a158c96d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the colon segment off. <br /></td></tr>
-<tr class="separator:ga59ab5282dca993e740e422a158c96d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa6640c8b372933de978e1066aed7e7fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#gaa6640c8b372933de978e1066aed7e7fd">watch_set_indicator</a> (<a class="el" href="group__slcd.html#ga37a28bfc539ea2bb83107d59f77b20d2">WatchIndicatorSegment</a> indicator)</td></tr>
-<tr class="memdesc:gaa6640c8b372933de978e1066aed7e7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an indicator on the LCD. Use this to turn on one of the indicator segments.  <a href="group__slcd.html#gaa6640c8b372933de978e1066aed7e7fd">More...</a><br /></td></tr>
-<tr class="separator:gaa6640c8b372933de978e1066aed7e7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga54ee46bb4eb85e136a05af499889f50e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#ga54ee46bb4eb85e136a05af499889f50e">watch_clear_indicator</a> (<a class="el" href="group__slcd.html#ga37a28bfc539ea2bb83107d59f77b20d2">WatchIndicatorSegment</a> indicator)</td></tr>
-<tr class="memdesc:ga54ee46bb4eb85e136a05af499889f50e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears an indicator on the LCD. Use this to turn off one of the indicator segments.  <a href="group__slcd.html#ga54ee46bb4eb85e136a05af499889f50e">More...</a><br /></td></tr>
-<tr class="separator:ga54ee46bb4eb85e136a05af499889f50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4ed473c7b2efdd3681e318f919f69b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__slcd.html#gaa4ed473c7b2efdd3681e318f919f69b1">watch_clear_all_indicators</a> ()</td></tr>
-<tr class="memdesc:gaa4ed473c7b2efdd3681e318f919f69b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all indicator segments.  <a href="group__slcd.html#gaa4ed473c7b2efdd3681e318f919f69b1">More...</a><br /></td></tr>
-<tr class="separator:gaa4ed473c7b2efdd3681e318f919f69b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad83cd70d15bdc69f8c13580f9cc16d1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gad83cd70d15bdc69f8c13580f9cc16d1c">watch_enable_led</a> (bool pwm)</td></tr>
-<tr class="memdesc:gad83cd70d15bdc69f8c13580f9cc16d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the LED.  <a href="group__led.html#gad83cd70d15bdc69f8c13580f9cc16d1c">More...</a><br /></td></tr>
-<tr class="separator:gad83cd70d15bdc69f8c13580f9cc16d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6bd23c1721f6db9d456de69fc8090f15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#ga6bd23c1721f6db9d456de69fc8090f15">watch_disable_led</a> (bool pwm)</td></tr>
-<tr class="memdesc:ga6bd23c1721f6db9d456de69fc8090f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the LEDs.  <a href="group__led.html#ga6bd23c1721f6db9d456de69fc8090f15">More...</a><br /></td></tr>
-<tr class="separator:ga6bd23c1721f6db9d456de69fc8090f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf79cbcc09657e05c7e33f79135d90435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gaf79cbcc09657e05c7e33f79135d90435">watch_set_led_color</a> (uint16_t red, uint16_t green)</td></tr>
-<tr class="memdesc:gaf79cbcc09657e05c7e33f79135d90435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the LED to a custom color by modulating each output's duty cycle.  <a href="group__led.html#gaf79cbcc09657e05c7e33f79135d90435">More...</a><br /></td></tr>
-<tr class="separator:gaf79cbcc09657e05c7e33f79135d90435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab9be40a7fd1715d8df83f1c86ccfa752"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gab9be40a7fd1715d8df83f1c86ccfa752">watch_set_led_red</a> ()</td></tr>
-<tr class="memdesc:gab9be40a7fd1715d8df83f1c86ccfa752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the red LED to full brightness, and turns the green LED off.  <a href="group__led.html#gab9be40a7fd1715d8df83f1c86ccfa752">More...</a><br /></td></tr>
-<tr class="separator:gab9be40a7fd1715d8df83f1c86ccfa752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad359d2ad60d5e46ecff45f87f9da82f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gad359d2ad60d5e46ecff45f87f9da82f2">watch_set_led_green</a> ()</td></tr>
-<tr class="memdesc:gad359d2ad60d5e46ecff45f87f9da82f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the green LED to full brightness, and turns the red LED off.  <a href="group__led.html#gad359d2ad60d5e46ecff45f87f9da82f2">More...</a><br /></td></tr>
-<tr class="separator:gad359d2ad60d5e46ecff45f87f9da82f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad9e31528c94f181001c2976231679708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gad9e31528c94f181001c2976231679708">watch_set_led_yellow</a> ()</td></tr>
-<tr class="memdesc:gad9e31528c94f181001c2976231679708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets both red and green LEDs to full brightness.  <a href="group__led.html#gad9e31528c94f181001c2976231679708">More...</a><br /></td></tr>
-<tr class="separator:gad9e31528c94f181001c2976231679708"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad11f5e13becf4fbc6211583c249d6e21"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__led.html#gad11f5e13becf4fbc6211583c249d6e21">watch_set_led_off</a> ()</td></tr>
-<tr class="memdesc:gad11f5e13becf4fbc6211583c249d6e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns both the red and the green LEDs off. <br /></td></tr>
-<tr class="separator:gad11f5e13becf4fbc6211583c249d6e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4be0be2a7f2d4389a24ed0878a3b2bfd"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga4be0be2a7f2d4389a24ed0878a3b2bfd">watch_enable_buzzer</a> ()</td></tr>
-<tr class="memdesc:ga4be0be2a7f2d4389a24ed0878a3b2bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the TCC peripheral, which drives the buzzer. <br /></td></tr>
-<tr class="separator:ga4be0be2a7f2d4389a24ed0878a3b2bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga77f213418f48937de73bfe7ac5fc58c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga77f213418f48937de73bfe7ac5fc58c9">watch_set_buzzer_period</a> (uint32_t period)</td></tr>
-<tr class="memdesc:ga77f213418f48937de73bfe7ac5fc58c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the period of the buzzer.  <a href="group__buzzer.html#ga77f213418f48937de73bfe7ac5fc58c9">More...</a><br /></td></tr>
-<tr class="separator:ga77f213418f48937de73bfe7ac5fc58c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5f608f6c7bed56e7435a1e3f5708ed2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga5f608f6c7bed56e7435a1e3f5708ed2e">watch_set_buzzer_on</a> ()</td></tr>
-<tr class="memdesc:ga5f608f6c7bed56e7435a1e3f5708ed2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the buzzer output on. It will emit a continuous sound at the given frequency.  <a href="group__buzzer.html#ga5f608f6c7bed56e7435a1e3f5708ed2e">More...</a><br /></td></tr>
-<tr class="separator:ga5f608f6c7bed56e7435a1e3f5708ed2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab4a632c9ed1670c3e3140cd6a643d596"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#gab4a632c9ed1670c3e3140cd6a643d596">watch_set_buzzer_off</a> ()</td></tr>
-<tr class="memdesc:gab4a632c9ed1670c3e3140cd6a643d596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the buzzer output off. <br /></td></tr>
-<tr class="separator:gab4a632c9ed1670c3e3140cd6a643d596"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b6ece8107c1f2bedf80d5584d204b80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga1b6ece8107c1f2bedf80d5584d204b80">watch_buzzer_play_note</a> (BuzzerNote note, uint16_t duration_ms)</td></tr>
-<tr class="memdesc:ga1b6ece8107c1f2bedf80d5584d204b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the given note for a set duration.  <a href="group__buzzer.html#ga1b6ece8107c1f2bedf80d5584d204b80">More...</a><br /></td></tr>
-<tr class="separator:ga1b6ece8107c1f2bedf80d5584d204b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9dc0424ce913f833dd9bd20e70257242"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga9dc0424ce913f833dd9bd20e70257242">_watch_rtc_is_enabled</a> ()</td></tr>
-<tr class="memdesc:ga9dc0424ce913f833dd9bd20e70257242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by main.c to check if the RTC is enabled. You may call this function, but outside of app_init, it sbould always return true. <br /></td></tr>
-<tr class="separator:ga9dc0424ce913f833dd9bd20e70257242"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacdb972e0c12f8e70e6c430118ea986f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gacdb972e0c12f8e70e6c430118ea986f8">watch_set_date_time</a> (struct calendar_date_time date_time)</td></tr>
-<tr class="memdesc:gacdb972e0c12f8e70e6c430118ea986f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the system date and time.  <a href="group__rtc.html#gacdb972e0c12f8e70e6c430118ea986f8">More...</a><br /></td></tr>
-<tr class="separator:gacdb972e0c12f8e70e6c430118ea986f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa17f684d144858f20a7f9c080139b27f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gaa17f684d144858f20a7f9c080139b27f">watch_get_date_time</a> (struct calendar_date_time *date_time)</td></tr>
-<tr class="memdesc:gaa17f684d144858f20a7f9c080139b27f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the system date and time in the provided struct.  <a href="group__rtc.html#gaa17f684d144858f20a7f9c080139b27f">More...</a><br /></td></tr>
-<tr class="separator:gaa17f684d144858f20a7f9c080139b27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63fe17d82b7d1a0392822bca448fafd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga63fe17d82b7d1a0392822bca448fafd3">watch_register_tick_callback</a> (ext_irq_cb_t callback)</td></tr>
-<tr class="memdesc:ga63fe17d82b7d1a0392822bca448fafd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a "tick" callback that will be called once per second.  <a href="group__rtc.html#ga63fe17d82b7d1a0392822bca448fafd3">More...</a><br /></td></tr>
-<tr class="separator:ga63fe17d82b7d1a0392822bca448fafd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae8ab3b640de2493edfac4f5eea68b0a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__adc.html#gae8ab3b640de2493edfac4f5eea68b0a0">watch_enable_analog</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:gae8ab3b640de2493edfac4f5eea68b0a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the ADC peripheral, and configures the selected pin for analog input.  <a href="group__adc.html#gae8ab3b640de2493edfac4f5eea68b0a0">More...</a><br /></td></tr>
-<tr class="separator:gae8ab3b640de2493edfac4f5eea68b0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">watch_enable_buttons</a> ()</td></tr>
-<tr class="memdesc:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the external interrupt controller for use with the buttons.  <a href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">More...</a><br /></td></tr>
-<tr class="separator:gaf343d2ffcbac61c808e31b2ae871bf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab2aaf9639d995df391f61d5b3477922b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">watch_register_button_callback</a> (const uint8_t pin, ext_irq_cb_t callback)</td></tr>
-<tr class="memdesc:gab2aaf9639d995df391f61d5b3477922b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures an external interrupt on one of the button pins.  <a href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">More...</a><br /></td></tr>
-<tr class="separator:gab2aaf9639d995df391f61d5b3477922b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8f6035dc4a5226fa34504e8a5a930e0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gpio.html#ga8f6035dc4a5226fa34504e8a5a930e0c">watch_enable_digital_input</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:ga8f6035dc4a5226fa34504e8a5a930e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the selected pin for digital input.  <a href="group__gpio.html#ga8f6035dc4a5226fa34504e8a5a930e0c">More...</a><br /></td></tr>
-<tr class="separator:ga8f6035dc4a5226fa34504e8a5a930e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga55a16884f634ee0eb2c981d1b9a06a4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gpio.html#ga55a16884f634ee0eb2c981d1b9a06a4d">watch_enable_pull_up</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:ga55a16884f634ee0eb2c981d1b9a06a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a pull-up resistor on the selected pin.  <a href="group__gpio.html#ga55a16884f634ee0eb2c981d1b9a06a4d">More...</a><br /></td></tr>
-<tr class="separator:ga55a16884f634ee0eb2c981d1b9a06a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae974fce4ac5d38ffe256186a84c63ff9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gpio.html#gae974fce4ac5d38ffe256186a84c63ff9">watch_enable_pull_down</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:gae974fce4ac5d38ffe256186a84c63ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a pull-down resistor on the selected pin.  <a href="group__gpio.html#gae974fce4ac5d38ffe256186a84c63ff9">More...</a><br /></td></tr>
-<tr class="separator:gae974fce4ac5d38ffe256186a84c63ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc7c5e867c05cd03f5955e8e8036b879"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gpio.html#gacc7c5e867c05cd03f5955e8e8036b879">watch_get_pin_level</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:gacc7c5e867c05cd03f5955e8e8036b879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the level of the selected pin.  <a href="group__gpio.html#gacc7c5e867c05cd03f5955e8e8036b879">More...</a><br /></td></tr>
-<tr class="separator:gacc7c5e867c05cd03f5955e8e8036b879"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf73a6405eb90bc6de32fb66f512fe4a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gpio.html#gaf73a6405eb90bc6de32fb66f512fe4a9">watch_enable_digital_output</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:gaf73a6405eb90bc6de32fb66f512fe4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the selected pin for digital output.  <a href="group__gpio.html#gaf73a6405eb90bc6de32fb66f512fe4a9">More...</a><br /></td></tr>
-<tr class="separator:gaf73a6405eb90bc6de32fb66f512fe4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15b40170b4225ac6a927da1d76e4fd3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gpio.html#ga15b40170b4225ac6a927da1d76e4fd3d">watch_disable_digital_output</a> (const uint8_t pin)</td></tr>
-<tr class="memdesc:ga15b40170b4225ac6a927da1d76e4fd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables digital output on the selected pin.  <a href="group__gpio.html#ga15b40170b4225ac6a927da1d76e4fd3d">More...</a><br /></td></tr>
-<tr class="separator:ga15b40170b4225ac6a927da1d76e4fd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e781c7e15045d2270f0cb3f87d619d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__gpio.html#ga2e781c7e15045d2270f0cb3f87d619d6">watch_set_pin_level</a> (const uint8_t pin, const bool level)</td></tr>
-<tr class="memdesc:ga2e781c7e15045d2270f0cb3f87d619d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the level of the selected pin.  <a href="group__gpio.html#ga2e781c7e15045d2270f0cb3f87d619d6">More...</a><br /></td></tr>
-<tr class="separator:ga2e781c7e15045d2270f0cb3f87d619d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3a20ed92a76b6e74e4e3ca4b4a6823c3"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#ga3a20ed92a76b6e74e4e3ca4b4a6823c3">watch_enable_i2c</a> ()</td></tr>
-<tr class="memdesc:ga3a20ed92a76b6e74e4e3ca4b4a6823c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the I2C peripheral. Call this before attempting to interface with I2C devices. <br /></td></tr>
-<tr class="separator:ga3a20ed92a76b6e74e4e3ca4b4a6823c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8b44030f78c30dd4026b349fc0c8cf08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#ga8b44030f78c30dd4026b349fc0c8cf08">watch_i2c_send</a> (int16_t addr, uint8_t *buf, uint16_t length)</td></tr>
-<tr class="memdesc:ga8b44030f78c30dd4026b349fc0c8cf08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a series of values to a device on the I2C bus.  <a href="group__i2c.html#ga8b44030f78c30dd4026b349fc0c8cf08">More...</a><br /></td></tr>
-<tr class="separator:ga8b44030f78c30dd4026b349fc0c8cf08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga426971387b87286c8decca7342c06b4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#ga426971387b87286c8decca7342c06b4b">watch_i2c_receive</a> (int16_t addr, uint8_t *buf, uint16_t length)</td></tr>
-<tr class="memdesc:ga426971387b87286c8decca7342c06b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives a series of values from a device on the I2C bus.  <a href="group__i2c.html#ga426971387b87286c8decca7342c06b4b">More...</a><br /></td></tr>
-<tr class="separator:ga426971387b87286c8decca7342c06b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf0a4c78215cbd85ab557fc6c786eb6ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#gaf0a4c78215cbd85ab557fc6c786eb6ad">watch_i2c_write8</a> (int16_t addr, uint8_t reg, uint8_t data)</td></tr>
-<tr class="memdesc:gaf0a4c78215cbd85ab557fc6c786eb6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a byte to a register in an I2C device.  <a href="group__i2c.html#gaf0a4c78215cbd85ab557fc6c786eb6ad">More...</a><br /></td></tr>
-<tr class="separator:gaf0a4c78215cbd85ab557fc6c786eb6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac5644140ddda98198f9d5deabbeaf781"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#gac5644140ddda98198f9d5deabbeaf781">watch_i2c_read8</a> (int16_t addr, uint8_t reg)</td></tr>
-<tr class="memdesc:gac5644140ddda98198f9d5deabbeaf781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a byte from a register in an I2C device.  <a href="group__i2c.html#gac5644140ddda98198f9d5deabbeaf781">More...</a><br /></td></tr>
-<tr class="separator:gac5644140ddda98198f9d5deabbeaf781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaed749d3ca5e6e3aedcf1aefed3d7663e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#gaed749d3ca5e6e3aedcf1aefed3d7663e">watch_i2c_read16</a> (int16_t addr, uint8_t reg)</td></tr>
-<tr class="memdesc:gaed749d3ca5e6e3aedcf1aefed3d7663e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an unsigned little-endian word from a register in an I2C device.  <a href="group__i2c.html#gaed749d3ca5e6e3aedcf1aefed3d7663e">More...</a><br /></td></tr>
-<tr class="separator:gaed749d3ca5e6e3aedcf1aefed3d7663e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6732b5655fdada88d083e4b4d05d1ca8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#ga6732b5655fdada88d083e4b4d05d1ca8">watch_i2c_read24</a> (int16_t addr, uint8_t reg)</td></tr>
-<tr class="memdesc:ga6732b5655fdada88d083e4b4d05d1ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads three bytes as an unsigned little-endian int from a register in an I2C device.  <a href="group__i2c.html#ga6732b5655fdada88d083e4b4d05d1ca8">More...</a><br /></td></tr>
-<tr class="separator:ga6732b5655fdada88d083e4b4d05d1ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3d1c750d1b228b11333d10fc9647d651"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__i2c.html#ga3d1c750d1b228b11333d10fc9647d651">watch_i2c_read32</a> (int16_t addr, uint8_t reg)</td></tr>
-<tr class="memdesc:ga3d1c750d1b228b11333d10fc9647d651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an unsigned little-endian int from a register in an I2C device.  <a href="group__i2c.html#ga3d1c750d1b228b11333d10fc9647d651">More...</a><br /></td></tr>
-<tr class="separator:ga3d1c750d1b228b11333d10fc9647d651"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae37f3cce3bfb7236fcfd188038d02089"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#gae37f3cce3bfb7236fcfd188038d02089">watch_enable_debug_uart</a> (uint32_t baud)</td></tr>
-<tr class="memdesc:gae37f3cce3bfb7236fcfd188038d02089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the debug UART.  <a href="group__debug.html#gae37f3cce3bfb7236fcfd188038d02089">More...</a><br /></td></tr>
-<tr class="separator:gae37f3cce3bfb7236fcfd188038d02089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad227e99a55a268a06ad0b38e5da02360"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#gad227e99a55a268a06ad0b38e5da02360">watch_debug_putc</a> (char c)</td></tr>
-<tr class="memdesc:gad227e99a55a268a06ad0b38e5da02360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a single character on the debug UART.  <a href="group__debug.html#gad227e99a55a268a06ad0b38e5da02360">More...</a><br /></td></tr>
-<tr class="separator:gad227e99a55a268a06ad0b38e5da02360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab21c8b4a71563f9823e25edfb115e50b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#gab21c8b4a71563f9823e25edfb115e50b">watch_debug_puts</a> (char *s)</td></tr>
-<tr class="memdesc:gab21c8b4a71563f9823e25edfb115e50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a string on the debug UART.  <a href="group__debug.html#gab21c8b4a71563f9823e25edfb115e50b">More...</a><br /></td></tr>
-<tr class="separator:gab21c8b4a71563f9823e25edfb115e50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4503eed7b8f69f7f31129256e024cfcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#ga4503eed7b8f69f7f31129256e024cfcf">watch_register_extwake_callback</a> (uint8_t pin, ext_irq_cb_t callback)</td></tr>
-<tr class="memdesc:ga4503eed7b8f69f7f31129256e024cfcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback on one of the RTC's external wake pins, which can wake the device from deep sleep mode.  <a href="group__deepsleep.html#ga4503eed7b8f69f7f31129256e024cfcf">More...</a><br /></td></tr>
-<tr class="separator:ga4503eed7b8f69f7f31129256e024cfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga385b36922ec76c5fe697772f97a05846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#ga385b36922ec76c5fe697772f97a05846">watch_store_backup_data</a> (uint32_t data, uint8_t reg)</td></tr>
-<tr class="memdesc:ga385b36922ec76c5fe697772f97a05846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores data in one of the RTC's backup registers, which retain their data in deep sleep.  <a href="group__deepsleep.html#ga385b36922ec76c5fe697772f97a05846">More...</a><br /></td></tr>
-<tr class="separator:ga385b36922ec76c5fe697772f97a05846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2de1f1012475654c4741f60808581196"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#ga2de1f1012475654c4741f60808581196">watch_get_backup_data</a> (uint8_t reg)</td></tr>
-<tr class="memdesc:ga2de1f1012475654c4741f60808581196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets 32 bits of data from the RTC's backup register, which retains its data in deep sleep.  <a href="group__deepsleep.html#ga2de1f1012475654c4741f60808581196">More...</a><br /></td></tr>
-<tr class="separator:ga2de1f1012475654c4741f60808581196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad37a6fd46f2d8b72cd371660c2d3af77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#gad37a6fd46f2d8b72cd371660c2d3af77">watch_enter_deep_sleep</a> ()</td></tr>
-<tr class="memdesc:gad37a6fd46f2d8b72cd371660c2d3af77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters the SAM L22's lowest-power mode, BACKUP.  <a href="group__deepsleep.html#gad37a6fd46f2d8b72cd371660c2d3af77">More...</a><br /></td></tr>
-<tr class="separator:gad37a6fd46f2d8b72cd371660c2d3af77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga747b4014093d6a71b6d8fba2db41696b"><td class="memItemLeft" align="right" valign="top">
-const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buzzer.html#ga747b4014093d6a71b6d8fba2db41696b">NotePeriods</a> [108]</td></tr>
-<tr class="memdesc:ga747b4014093d6a71b6d8fba2db41696b"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array of periods for all the notes on a piano, corresponding to the names in BuzzerNote. <br /></td></tr>
-<tr class="separator:ga747b4014093d6a71b6d8fba2db41696b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
