@@ -67,6 +67,8 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">watch.h File Reference</div>  </div>
 </div><!--header-->
@@ -88,6 +90,34 @@ $(function() {
 <code>#include &quot;watch_private.h&quot;</code><br />
 </div>
 <p><a href="watch_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4e9d446ba79c748328f3ee268d25c93a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="watch_8h.html#a4e9d446ba79c748328f3ee268d25c93a">watch_is_battery_low</a> ()</td></tr>
+<tr class="memdesc:a4e9d446ba79c748328f3ee268d25c93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true when the battery voltage dips below 2.5V.  <a href="watch_8h.html#a4e9d446ba79c748328f3ee268d25c93a">More...</a><br /></td></tr>
+<tr class="separator:a4e9d446ba79c748328f3ee268d25c93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a4e9d446ba79c748328f3ee268d25c93a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e9d446ba79c748328f3ee268d25c93a">&#9670;&nbsp;</a></span>watch_is_battery_low()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool watch_is_battery_low </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true when the battery voltage dips below 2.5V. </p>
+<p>A CR2016 battery will have a nominal voltage between 2.9 and 3 volts for most of its lifespan. Once the battery discharges to about 60%, the voltage will drift slightly lower; this may manifest as a dimmer LED. By the time the battery voltage has fallen to 2.5 volts, it will have probably less than 10% of its capacity remaining, and you can expect the voltage to drop relatively quickly as the battery dies. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -97,12 +97,29 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;hal_ext_irq.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">watch_enable_buttons</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">watch_register_button_callback</a>(<span class="keyword">const</span> uint8_t pin, ext_irq_cb_t callback);</div>
-<div class="ttc" id="agroup__buttons_html_gab2aaf9639d995df391f61d5b3477922b"><div class="ttname"><a href="group__buttons.html#gab2aaf9639d995df391f61d5b3477922b">watch_register_button_callback</a></div><div class="ttdeci">void watch_register_button_callback(const uint8_t pin, ext_irq_cb_t callback)</div><div class="ttdoc">Configures an external interrupt on one of the button pins.</div><div class="ttdef"><b>Definition:</b> watch_extint.c:29</div></div>
-<div class="ttc" id="agroup__buttons_html_gaf343d2ffcbac61c808e31b2ae871bf94"><div class="ttname"><a href="group__buttons.html#gaf343d2ffcbac61c808e31b2ae871bf94">watch_enable_buttons</a></div><div class="ttdeci">void watch_enable_buttons()</div><div class="ttdoc">Enables the external interrupt controller for use with the buttons.</div><div class="ttdef"><b>Definition:</b> watch_extint.c:25</div></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__buttons.html#ga0454ca577b6fcc7a7cb03039cb5150d8">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group__buttons.html#ga0454ca577b6fcc7a7cb03039cb5150d8">watch_interrupt_trigger</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    INTERRUPT_TRIGGER_NONE = 0,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    INTERRUPT_TRIGGER_RISING,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    INTERRUPT_TRIGGER_FALLING,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    INTERRUPT_TRIGGER_BOTH,</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__buttons.html#gadee2b304ce34a8aec5aedabd75934c1b">   46</a></span>&#160;} <a class="code" href="group__buttons.html#ga0454ca577b6fcc7a7cb03039cb5150d8">watch_interrupt_trigger</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buttons.html#ga51da136b8accea4b3a0348adec835567">watch_enable_external_interrupts</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buttons.html#gac184b7a865db28a7b66ee4bf650d5402">watch_disable_external_interrupts</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__buttons.html#gae40d2f73d0412680d83c26b8a0e1d31c">watch_register_interrupt_callback</a>(<span class="keyword">const</span> uint8_t pin, ext_irq_cb_t callback, <a class="code" href="group__buttons.html#ga0454ca577b6fcc7a7cb03039cb5150d8">watch_interrupt_trigger</a> trigger);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;__attribute__((deprecated(<span class="stringliteral">&quot;Use watch_register_interrupt_callback or watch_register_extwake_callback instead&quot;</span>)))</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;void watch_register_button_callback(const uint8_t pin, ext_irq_cb_t callback);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;__attribute__((deprecated(&quot;Use <a class="code" href="group__buttons.html#ga51da136b8accea4b3a0348adec835567">watch_enable_external_interrupts</a> instead&quot;)))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> watch_enable_buttons();</div>
+<div class="ttc" id="agroup__buttons_html_ga0454ca577b6fcc7a7cb03039cb5150d8"><div class="ttname"><a href="group__buttons.html#ga0454ca577b6fcc7a7cb03039cb5150d8">watch_interrupt_trigger</a></div><div class="ttdeci">watch_interrupt_trigger</div><div class="ttdoc">An enum defining the types of interrupt trigger you wish to scan for.</div><div class="ttdef"><b>Definition:</b> watch_extint.h:41</div></div>
+<div class="ttc" id="agroup__buttons_html_ga51da136b8accea4b3a0348adec835567"><div class="ttname"><a href="group__buttons.html#ga51da136b8accea4b3a0348adec835567">watch_enable_external_interrupts</a></div><div class="ttdeci">void watch_enable_external_interrupts()</div><div class="ttdoc">Enables the external interrupt controller.</div><div class="ttdef"><b>Definition:</b> watch_extint.c:25</div></div>
+<div class="ttc" id="agroup__buttons_html_gac184b7a865db28a7b66ee4bf650d5402"><div class="ttname"><a href="group__buttons.html#gac184b7a865db28a7b66ee4bf650d5402">watch_disable_external_interrupts</a></div><div class="ttdeci">void watch_disable_external_interrupts()</div><div class="ttdoc">Disables the external interrupt controller.</div><div class="ttdef"><b>Definition:</b> watch_extint.c:34</div></div>
+<div class="ttc" id="agroup__buttons_html_gae40d2f73d0412680d83c26b8a0e1d31c"><div class="ttname"><a href="group__buttons.html#gae40d2f73d0412680d83c26b8a0e1d31c">watch_register_interrupt_callback</a></div><div class="ttdeci">void watch_register_interrupt_callback(const uint8_t pin, ext_irq_cb_t callback, watch_interrupt_trigger trigger)</div><div class="ttdoc">Configures an external interrupt callback on one of the external interrupt pins.</div><div class="ttdef"><b>Definition:</b> watch_extint.c:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

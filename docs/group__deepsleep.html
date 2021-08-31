@@ -75,9 +75,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga4503eed7b8f69f7f31129256e024cfcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#ga4503eed7b8f69f7f31129256e024cfcf">watch_register_extwake_callback</a> (uint8_t pin, ext_irq_cb_t callback)</td></tr>
-<tr class="memdesc:ga4503eed7b8f69f7f31129256e024cfcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback on one of the RTC's external wake pins, which can wake the device from deep sleep mode.  <a href="group__deepsleep.html#ga4503eed7b8f69f7f31129256e024cfcf">More...</a><br /></td></tr>
-<tr class="separator:ga4503eed7b8f69f7f31129256e024cfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacad726423f5f38697c87474ab25244ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#gacad726423f5f38697c87474ab25244ca">watch_register_extwake_callback</a> (uint8_t pin, ext_irq_cb_t callback, bool level)</td></tr>
+<tr class="memdesc:gacad726423f5f38697c87474ab25244ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback on one of the RTC's external wake pins, which can wake the device from deep sleep (aka BACKUP) mode.  <a href="group__deepsleep.html#gacad726423f5f38697c87474ab25244ca">More...</a><br /></td></tr>
+<tr class="separator:gacad726423f5f38697c87474ab25244ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga385b36922ec76c5fe697772f97a05846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__deepsleep.html#ga385b36922ec76c5fe697772f97a05846">watch_store_backup_data</a> (uint32_t data, uint8_t reg)</td></tr>
 <tr class="memdesc:ga385b36922ec76c5fe697772f97a05846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores data in one of the RTC's backup registers, which retain their data in deep sleep.  <a href="group__deepsleep.html#ga385b36922ec76c5fe697772f97a05846">More...</a><br /></td></tr>
 <tr class="separator:ga385b36922ec76c5fe697772f97a05846"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,8 +139,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga4503eed7b8f69f7f31129256e024cfcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4503eed7b8f69f7f31129256e024cfcf">&#9670;&nbsp;</a></span>watch_register_extwake_callback()</h2>
+<a id="gacad726423f5f38697c87474ab25244ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacad726423f5f38697c87474ab25244ca">&#9670;&nbsp;</a></span>watch_register_extwake_callback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,7 +155,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">ext_irq_cb_t&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,15 +171,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registers a callback on one of the RTC's external wake pins, which can wake the device from deep sleep mode. </p>
+<p>Registers a callback on one of the RTC's external wake pins, which can wake the device from deep sleep (aka BACKUP) mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pin</td><td>Either pin A2 or pin D1, the two external wake pins on the nine-pin connector. </td></tr>
+    <tr><td class="paramname">pin</td><td>Either pin BTN_ALARM, A2, or A4. These are the three external wake pins. If the pin is BTN_ALARM, this function also enables an internal pull down on that pin. </td></tr>
     <tr><td class="paramname">callback</td><td>The callback to be called if this pin triggers outside of deep sleep mode. </td></tr>
+    <tr><td class="paramname">level</td><td>The level you wish to scan for: true for rising, false for falling. Note that you cannot scan for both rising and falling edges like you can with the external interrupt pins; with the external wake interrupt, you can only get one or the other. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>When in normal or STANDBY mode, this will function much like a standard external interrupt situation: these pins will wake from standby, and your callback will be called. However, if the device enters deep sleep and one of these pins wakes the device, your callback WILL NOT be called. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>When in normal or STANDBY mode, this will function much like a standard external interrupt situation: these pins will wake from standby, and your callback will be called. However, if the device enters deep sleep and one of these pins wakes the device, your callback WILL NOT be called, as the device is basically waking from reset at that point. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>As of the current SAM L22 silicon revision (rev B), the BTN_ALARM pin cannot wake the device from BACKUP mode. You can still use this function to register a BTN_ALARM interrupt in normal or STANDBY mode, but to wake from BACKUP, you will need to use pin A2 or A4. </dd></dl>
 
 </div>
 </div>
