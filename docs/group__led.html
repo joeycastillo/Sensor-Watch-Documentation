@@ -106,7 +106,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This section covers functions related to the bi-color red/green LED mounted behind the LCD. </p>
-<p>The SAM L22 is an exceedingly power efficient chip, whereas the LED's are relatively power- hungry. The green LED, at full power, consumes more power than the whole chip in active mode, and the red LED consumes about twelve times as much power! The LED's should thus be used only sparingly in order to preserve battery life. </p>
+<p>The SAM L22 is an exceedingly power efficient chip, whereas the LED's are relatively power- hungry. The green LED, at full power, consumes more power than the whole chip in active mode, and the red LED consumes about twelve times as much power! The LED's should thus be used only sparingly in order to preserve battery life. </p><dl class="section note"><dt>Note</dt><dd>Some watches use a red/blue LED instead of a red/green LED. You will be able to determine this easily when you double tap the reset button: if the pulsing bootloader LED is red, you have a red/green edition; if it is blue, you have a red/blue edition. For red/blue watches, build your project with the command <code>make LED=BLUE</code>, and the watch library will automatically swap the pins so that watch_set_led_red sets the red LED, and watch_set_led_green sets the blue one. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga069d13cd5777e5246265aabf83193ef0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga069d13cd5777e5246265aabf83193ef0">&#9670;&nbsp;</a></span>watch_disable_leds()</h2>
@@ -178,7 +178,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">red</td><td>The red value from 0-255. </td></tr>
-    <tr><td class="paramname">green</td><td>The green value from 0-255. </td></tr>
+    <tr><td class="paramname">green</td><td>The green value from 0-255. If your watch has a red/blue LED, this will be the blue value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,7 +202,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </div><div class="memdoc">
 
 <p>Sets the green LED to full brightness, and turns the red LED off. </p>
-<dl class="section note"><dt>Note</dt><dd>Of the two LED's in the RG bi-color LED, the green LED is the more power-efficient one (~0.44 mA). </dd></dl>
+<p>Of the two LED's in the RG bi-color LED, the green LED is the more power-efficient one (~0.44 mA). </p><dl class="section note"><dt>Note</dt><dd>If your watch has a red/blue LED, this method will set the LED to blue. </dd></dl>
 
 </div>
 </div>
@@ -222,7 +222,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </div><div class="memdoc">
 
 <p>Sets the red LED to full brightness, and turns the green LED off. </p>
-<dl class="section note"><dt>Note</dt><dd>Of the two LED's in the RG bi-color LED, the red LED is the less power-efficient one (~4.5 mA). </dd></dl>
+<p>Of the two LED's in the RG bi-color LED, the red LED is the less power-efficient one (~4.5 mA). </p>
 
 </div>
 </div>
@@ -242,7 +242,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </div><div class="memdoc">
 
 <p>Sets both red and green LEDs to full brightness. </p>
-<dl class="section note"><dt>Note</dt><dd>The total current draw between the two LED's in this mode will be ~5 mA, which is more than the watch draws in any other mode. Take care not to drain the battery. </dd></dl>
+<p>The total current draw between the two LED's in this mode will be ~5 mA, which is more than the watch draws in any other mode. Take care not to drain the battery. </p><dl class="section note"><dt>Note</dt><dd>If your watch has a red/blue LED, this method will set the LED to pink. </dd></dl>
 
 </div>
 </div>
