@@ -85,9 +85,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 <tr class="memitem:ga2064244f68cff87a1df08f6b07183069"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__adc.html#ga2064244f68cff87a1df08f6b07183069">watch_get_analog_pin_level</a> (const uint8_t pin)</td></tr>
 <tr class="memdesc:ga2064244f68cff87a1df08f6b07183069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an analog value from one of the pins.  <a href="group__adc.html#ga2064244f68cff87a1df08f6b07183069">More...</a><br /></td></tr>
 <tr class="separator:ga2064244f68cff87a1df08f6b07183069"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf5facf80a19915176b698deb3ed23431"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__adc.html#gaf5facf80a19915176b698deb3ed23431">watch_set_num_analog_samples</a> (uint16_t samples)</td></tr>
-<tr class="memdesc:gaf5facf80a19915176b698deb3ed23431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of samples to accumulate when measuring a pin level. Default is 16.  <a href="group__adc.html#gaf5facf80a19915176b698deb3ed23431">More...</a><br /></td></tr>
-<tr class="separator:gaf5facf80a19915176b698deb3ed23431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90bac58a3fa935d8fd640f4b58c8037d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__adc.html#ga90bac58a3fa935d8fd640f4b58c8037d">watch_set_analog_num_samples</a> (uint16_t samples)</td></tr>
+<tr class="memdesc:ga90bac58a3fa935d8fd640f4b58c8037d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of samples to accumulate when measuring a pin level. Default is 16.  <a href="group__adc.html#ga90bac58a3fa935d8fd640f4b58c8037d">More...</a><br /></td></tr>
+<tr class="separator:ga90bac58a3fa935d8fd640f4b58c8037d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae9f9ed34e8752e211c1692af473a88dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__adc.html#gae9f9ed34e8752e211c1692af473a88dc">watch_set_analog_sampling_length</a> (uint8_t cycles)</td></tr>
 <tr class="memdesc:gae9f9ed34e8752e211c1692af473a88dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the length of time spent sampling, which allows measurement of higher impedance inputs. Default is 1.  <a href="group__adc.html#gae9f9ed34e8752e211c1692af473a88dc">More...</a><br /></td></tr>
 <tr class="separator:gae9f9ed34e8752e211c1692af473a88dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,7 +213,40 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a 16-bit unsigned integer from 0-65535 representing the sampled value, unless you have changed the number of samples. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__adc.html#gaf5facf80a19915176b698deb3ed23431" title="Sets the number of samples to accumulate when measuring a pin level. Default is 16.">watch_set_num_analog_samples</a> for details on how that function changes the values returned from this one. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>watch_set_num_analog_samples for details on how that function changes the values returned from this one. </dd></dl>
+
+</div>
+</div>
+<a id="ga90bac58a3fa935d8fd640f4b58c8037d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90bac58a3fa935d8fd640f4b58c8037d">&#9670;&nbsp;</a></span>watch_set_analog_num_samples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void watch_set_analog_num_samples </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>samples</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the number of samples to accumulate when measuring a pin level. Default is 16. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">samples</td><td>A power of 2 &lt;= 1024. Specifically: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 or 1024. Any other value will be ignored.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The SAM L22's ADC has a resolution of 12 bits. By default, the watch configures the ADC to take 16 samples of the analog input and accumulate them in the result register; this effectively gives us a 16-bit resolution, at the cost of taking 16 ADC cycles to complete a measurement. If you are measuring a slowly changing signal like a thermistor output or an ambient light sensor this is probably fine, even desirable. If you are measuring something a bit more fast-paced, like an analog accelerometer, you may wish to exchange precision for speed. In this case you may call this function to configure the ADC to accumulate fewer samples. HOWEVER! Note that this may change the range of values returned from watch_get_analog_pin_level:</p><ul>
+<li>For watch_set_num_analog_samples(1), the returned value will be 12 bits (0-4095).</li>
+<li>For watch_set_num_analog_samples(2), the returned value will be 13 bits (0-8191).</li>
+<li>For watch_set_num_analog_samples(4), the returned value will be 14 bits (0-16383).</li>
+<li>For watch_set_num_analog_samples(8), the returned value will be 15 bits (0-32767). For sampling values over 16, the returned value will still be 16 bits (0-65535); the ADC will automatically divide the measured value by whatever factor is necessary to fit the result in 16 bits. <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__adc.html#ga2064244f68cff87a1df08f6b07183069" title="Reads an analog value from one of the pins.">watch_get_analog_pin_level</a> </dd></dl>
+</li>
+</ul>
 
 </div>
 </div>
@@ -242,39 +275,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grou
 </dl>
 <dl class="section see"><dt>See also</dt><dd>this article by Thea Flowers: <a href="https://blog.thea.codes/getting-the-most-out-of-the-samd21-adc/">https://blog.thea.codes/getting-the-most-out-of-the-samd21-adc/</a> which is where I learned all of this.</dd></dl>
 <p>To measure an analog value, the SAM L22 must charge a capacitor to the analog voltage presented at the input. This takes time. Importantly, the higher the input impedance, the more time this takes. As a basic example: if you are using a thermistor tied to VCC to measure temperature, the capacitor has to charge through the thermistor. The higher the resistor value, the higher the input impedance, and the more time we need to allow for the measurement. By default, the ADC is configured to run on a 500 kHz clock with a sample time of one cycle. This is appropriate for an input impedance up to about 28kΩ. Setting the sampling time to 4 cycles allows for an input impedance up to 123kΩ. Setting the sampling time to the maximum of 64 cycles theoretically allows for input impedance up to 2 MΩ. (I based these numbers on the calculator in the linked blog post; it also has a ton of great info on the SAM D21 ADC, which is similar to the SAM L22's). </p>
-
-</div>
-</div>
-<a id="gaf5facf80a19915176b698deb3ed23431"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf5facf80a19915176b698deb3ed23431">&#9670;&nbsp;</a></span>watch_set_num_analog_samples()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void watch_set_num_analog_samples </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>samples</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the number of samples to accumulate when measuring a pin level. Default is 16. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">samples</td><td>A power of 2 &lt;= 1024. Specifically: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 or 1024. Any other value will be ignored.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>The SAM L22's ADC has a resolution of 12 bits. By default, the watch configures the ADC to take 16 samples of the analog input and accumulate them in the result register; this effectively gives us a 16-bit resolution, at the cost of taking 16 ADC cycles to complete a measurement. If you are measuring a slowly changing signal like a thermistor output or an ambient light sensor this is probably fine, even desirable. If you are measuring something a bit more fast-paced, like an analog accelerometer, you may wish to exchange precision for speed. In this case you may call this function to configure the ADC to accumulate fewer samples. HOWEVER! Note that this may change the range of values returned from watch_get_analog_pin_level:</p><ul>
-<li>For watch_set_num_analog_samples(1), the returned value will be 12 bits (0-4095).</li>
-<li>For watch_set_num_analog_samples(2), the returned value will be 13 bits (0-8191).</li>
-<li>For watch_set_num_analog_samples(4), the returned value will be 14 bits (0-16383).</li>
-<li>For watch_set_num_analog_samples(8), the returned value will be 15 bits (0-32767). For sampling values over 16, the returned value will still be 16 bits (0-65535); the ADC will automatically divide the measured value by whatever factor is necessary to fit the result in 16 bits. <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__adc.html#ga2064244f68cff87a1df08f6b07183069" title="Reads an analog value from one of the pins.">watch_get_analog_pin_level</a> </dd></dl>
-</li>
-</ul>
 
 </div>
 </div>
