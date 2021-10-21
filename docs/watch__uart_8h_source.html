@@ -93,17 +93,23 @@ $(function() {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * SOFTWARE.</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">   39</a></span><a class="code hl_function" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">__attribute__</a>((deprecated(<span class="stringliteral">&quot;Use printf to log debug messages over USB.&quot;</span>)))</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>void watch_enable_debug_uart(uint32_t baud);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><a class="code hl_function" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">__attribute__</a>((deprecated(&quot;Use printf to log debug messages over USB.&quot;)))</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> watch_debug_putc(<span class="keywordtype">char</span> c);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_function" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">__attribute__</a>((deprecated(&quot;Use printf to log debug messages over USB.&quot;)))</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">void</span> watch_debug_puts(<span class="keywordtype">char</span> *s);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef _WATCH_UART_H_INCLUDED</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define _WATCH_UART_H_INCLUDED</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="watch_8h.html">watch.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">   43</a></span><a class="code hl_function" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">__attribute__</a>((deprecated(<span class="stringliteral">&quot;Use printf to log debug messages over USB.&quot;</span>)))</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>void watch_enable_debug_uart(uint32_t baud);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_function" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">__attribute__</a>((deprecated(&quot;Use printf to log debug messages over USB.&quot;)))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> watch_debug_putc(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><a class="code hl_function" href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">__attribute__</a>((deprecated(&quot;Use printf to log debug messages over USB.&quot;)))</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> watch_debug_puts(<span class="keywordtype">char</span> *s);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agroup__debug_html_ga2014a199fbd2a6d7cecb24628576722c"><div class="ttname"><a href="group__debug.html#ga2014a199fbd2a6d7cecb24628576722c">__attribute__</a></div><div class="ttdeci">__attribute__((deprecated(&quot;Use printf to log debug messages over USB.&quot;))) void watch_enable_debug_uart(uint32_t baud)</div><div class="ttdoc">Initializes the debug UART.</div></div>
+<div class="ttc" id="awatch_8h_html"><div class="ttname"><a href="watch_8h.html">watch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
