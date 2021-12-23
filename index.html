@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Homepage</title>
+        <title>The Sensor Watch</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Homepage</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="wig/index.html"><strong aria-hidden="true">2.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> Big Picture Stuff</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Sensor Watch Display</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Putting It All Together</div></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> The Sensor Watch</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="wig/index.html"><strong aria-hidden="true">2.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> Big Picture Stuff</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Sensor Watch Display</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Putting It All Together</div></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -136,6 +136,7 @@
                     <main>
                         <h1 id="the-sensor-watch"><a class="header" href="#the-sensor-watch">The Sensor Watch</a></h1>
 <p>The Sensor Watch is a board replacement for the classic Casio F-91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.</p>
+<p><img src="images/sensor-watch.jpg" alt="Photo: a close-up of the Sensor Watch circuit board, and a wristwatch displaying the word “Hello”" /></p>
 <p>Features:</p>
 <ul>
 <li>ARM Cortex M0+ microcontroller</li>
@@ -148,6 +149,7 @@
 <li>Reset button with double-tap UF2 bootloader</li>
 <li>Nine-pin flex PCB connector</li>
 </ul>
+<p><img src="images/sensor-board.png" alt="Rendering: an L-shaped flex PCB labeled “Sensor Watch Environment”" /></p>
 <p>You may have noticed that there are no sensors on this board. That is by design: rather than pick sensors for you, the goal is to add a tiny flexible PCB with the sensors YOU want, and interface them over the nine-pin connector. The connector provides the following options for power and connectivity:</p>
 <ul>
 <li>3V power (nominal voltage from a CR2016 coin cell, can drop to ~2.7V)</li>

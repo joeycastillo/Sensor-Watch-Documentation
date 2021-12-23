@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Homepage</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="wig/index.html"><strong aria-hidden="true">2.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> Big Picture Stuff</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Sensor Watch Display</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Putting It All Together</div></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> The Sensor Watch</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="wig/index.html"><strong aria-hidden="true">2.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> Big Picture Stuff</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Sensor Watch Display</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Putting It All Together</div></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,6 +137,7 @@
                     <main>
                         <h1 id="the-sensor-watch"><a class="header" href="#the-sensor-watch">The Sensor Watch</a></h1>
 <p>The Sensor Watch is a board replacement for the classic Casio F-91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.</p>
+<p><img src="images/sensor-watch.jpg" alt="Photo: a close-up of the Sensor Watch circuit board, and a wristwatch displaying the word “Hello”" /></p>
 <p>Features:</p>
 <ul>
 <li>ARM Cortex M0+ microcontroller</li>
@@ -149,6 +150,7 @@
 <li>Reset button with double-tap UF2 bootloader</li>
 <li>Nine-pin flex PCB connector</li>
 </ul>
+<p><img src="images/sensor-board.png" alt="Rendering: an L-shaped flex PCB labeled “Sensor Watch Environment”" /></p>
 <p>You may have noticed that there are no sensors on this board. That is by design: rather than pick sensors for you, the goal is to add a tiny flexible PCB with the sensors YOU want, and interface them over the nine-pin connector. The connector provides the following options for power and connectivity:</p>
 <ul>
 <li>3V power (nominal voltage from a CR2016 coin cell, can drop to ~2.7V)</li>
@@ -180,7 +182,7 @@
 <p>You will need to install <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads/">the GNU Arm Embedded Toolchain</a> to build projects for the watch. The watch library has been tested with the <code>9-2019-q4-major</code> version and the <code>10.3-2021.07</code> versions.</p>
 <p>To build your project, open your terminal and navigate to the project's <code>make</code> folder, then type <code>make</code>.</p>
 <p>To install the project onto your Sensor Watch board, plug the watch into your USB port and double tap the tiny Reset button on the back of the board. You should see the LED light up red and begin pulsing. (If it does not, make sure you didn’t plug the board in upside down). Once you see the “WATCHBOOT” drive appear on your desktop, type <code>make install</code>. This will convert your compiled program to a UF2 file, and copy it over to the watch.</p>
-<div style="break-before: page; page-break-before: always;"></div><p>Watch Interface Guidelines (WIG)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="watch-interface-guidelines-wig"><a class="header" href="#watch-interface-guidelines-wig">Watch Interface Guidelines (WIG)</a></h1>
 <p>This document outlines best practices for developing watch faces for Movement, the community firmware for the Sensor Watch. While this is a rather specific scope, many of these concepts will be relevant to writing a bare-metal Sensor Watch app as well. After reading this document, you should have a sense for the hardware capabilities and limitations of Sensor Watch, the kinds of applications that are well-suited to the hardware, and the interaction models that tend to make for a rich and usable watch face. </p>
 
                     </main>
