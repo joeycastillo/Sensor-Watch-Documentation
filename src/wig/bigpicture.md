@@ -30,7 +30,7 @@ The Temperature Watch Face
 
 This is the Temperature watch face. It displays the current temperature, as read from a thermistor voltage divider on a Sensor Watch accessory board.
 
-This watch face, while simple, is dominated by a single large piece of information: the current temperature. The wearer is able to absorb this information quickly and easily. The temperature data itself is left-justified; if the LED only illuminated the first two digits, the wearer would at least know that the temperature is in the range of 68 degrees; the fractional part, while useful, is not essential to a quick read of the conditions.
+This watch face, while simple, is dominated by a single large piece of information: the current temperature. The wearer is able to absorb this information quickly and easily. The temperature data itself is left-justified. If the LED only illuminated the first two digits, the wearer would at least know that the temperature is in the range of 68 degrees. The fractional part, while useful, is not essential to a quick read of the conditions.
 
 Also note that the “signal” indicator segment, used on the main watch face to indicate the status of the hourly beep, is here repurposed to indicate when a new reading is being taken. Don’t be afraid to use these indicators for your own purposes! Whereas the bell indicator might signal that an alarm is enabled on an alarm watch face, you may want to use it to signal an error or warning condition on another face. This is totally fine: the wearer will over time grow familiar with the layout of your watch face, and make the correct associations between icons and concepts.
 
