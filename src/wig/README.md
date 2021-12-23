@@ -7,7 +7,7 @@ Before we get to details, there are two major points that underly every piece of
 
 #### Sensor Watch is a watch
 
-You'll wear Sensor Watch on your wrist, and you'll interact with it to answer questions about your day and the world around you. “When does the sun set this evening?” “How late is it in Berlin right now?” “What's the high tide today?” These are the kinds of questions that Sensor Watch can excel at answering quickly and clearly.
+You’ll wear Sensor Watch on your wrist, and you’ll interact with it to answer questions about your day and the world around you. “When does the sun set this evening?” “How late is it in Berlin right now?” “What’s the high tide today?” These are the kinds of questions that Sensor Watch can excel at answering quickly and clearly.
 
 ![Rendering: two screens of a tide prediction app, showing the high tide of 7.7 feet at 7:30 AM](images/tide-app.png)
 
@@ -19,7 +19,7 @@ Keeping these prompts simple keeps the focus on the things that Sensor Watch can
 
 #### Sensor Watch is not a smart watch
 
-While Sensor Watch can have sensors added to it to measure things like temperature, light or acceleration, it's not generally designed to synchronize these measurements to another device like a smart phone; in fact, by default, it has no way of syncing data to or from a device. This makes Sensor Watch less well suited to answering complex questions with that require external data or a longer data trail; questions like “Will it rain tomorrow” require data the watch does not have, and questions like “How active was I last month?“ may be too complex to answer on a small watch with only a few buttons.
+While Sensor Watch can have sensors added to it to measure things like temperature, light or acceleration, it’s not generally designed to synchronize these measurements to another device like a smart phone; in fact, by default, it has no way of syncing data to or from a device. This makes Sensor Watch less well suited to answering complex questions with that require external data or a longer data trail; questions like “Will it rain tomorrow” require data the watch does not have, and questions like “How active was I last month?“ may be too complex to answer on a small watch with only a few buttons.
 
 There are three key hardware differences between Sensor Watch and a smart watch:
 
@@ -36,4 +36,4 @@ These differences have implications for how a watch face displays content, how t
 Road Map
 --------
 
-This document is divided into five sections. First, we'll talk about [the "big picture" stuff](wig/bigpicture.md): some of the concepts you should keep in mind when designing watch faces for Sensor Watch, some of what it does well, and some of what it doesn't. Next, we'll have three sections dedicated to each of those three key areas of functionality: the display, the buttons, and the low-power microcontroller. Finally, we'll bring all of these concepts together to make a very simple watch face that says hello.
+This document is divided into five sections. First, we’ll talk about [the “big picture” stuff](wig/bigpicture.md): some of the concepts you should keep in mind when designing watch faces for Sensor Watch, some of what it does well, and some of what it doesn’t. Next, we’ll have three sections dedicated to each of those three key areas of functionality: the display, the buttons, and the low-power microcontroller. Finally, we’ll bring all of these concepts together to make a very simple watch face that says hello.
