@@ -9,7 +9,7 @@ Before we get to details, there are two major points that underly every piece of
 
 You'll wear Sensor Watch on your wrist, and you'll interact with it to answer questions about your day and the world around you. “What time is it in Berlin?” “When does the sun set?” “What time is high tide today?” These are the kinds of questions that Sensor Watch can excel at answering quickly and clearly. 
 
-![Rendering: two screens of a tide prediction app, showing the high tide of 7.7 feet at 7:30 AM](images/tide-app.jpg)
+![Rendering: two screens of a tide prediction app, showing the high tide of 7.7 feet at 7:30 AM](images/tide-app.png)
 
 Even when you add sensors like a thermometer, light sensor or accelerometer, you should think about how your watch face can answer these kinds of simple questions. “How cold was it last night?” “What shutter speed should I use for this photo?” “Was I active enough today?” 
 
