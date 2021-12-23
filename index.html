@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Homepage</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Homepage</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="wig/index.html"><strong aria-hidden="true">2.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">2.1.</strong> Big Picture Stuff</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Sensor Watch Display</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Putting It All Together</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="the-sensor-watch"><a class="header" href="#the-sensor-watch">The Sensor Watch</a></h1>
+<p>The Sensor Watch is a board replacement for the classic Casio F-91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.</p>
+<p>Features:</p>
+<ul>
+<li>ARM Cortex M0+ microcontroller</li>
+<li>32KHz crystal for real-time clock with alarm function</li>
+<li>Ten digit segment LCD, plus five indicator segments</li>
+<li>Three interrupt capable buttons</li>
+<li>Red / green PWM’able LED backlight</li>
+<li>Optional piezo buzzer (requires some light soldering)</li>
+<li>On-board USB Micro B connector</li>
+<li>Reset button with double-tap UF2 bootloader</li>
+<li>Nine-pin flex PCB connector</li>
+</ul>
+<p>You may have noticed that there are no sensors on this board. That is by design: rather than pick sensors for you, the goal is to add a tiny flexible PCB with the sensors YOU want, and interface them over the nine-pin connector. The connector provides the following options for power and connectivity:</p>
+<ul>
+<li>3V power (nominal voltage from a CR2016 coin cell, can drop to ~2.7V)</li>
+<li>An I²C interface with built-in pull-up resistors</li>
+<li>Five general purpose IO pins, which can be configured as:
+<ul>
+<li>Five analog inputs</li>
+<li>Five interrupt-capable digital inputs, with internal pull-up or pull-down resistors</li>
+<li>Five digital outputs</li>
+<li>SPI controller (with one spare analog / GPIO pin leftover)</li>
+<li>One UART TX/RX pair (with three GPIO leftover)</li>
+<li>Up to four PWM pins on two independent TC instances</li>
+<li>Two external wake inputs that can wake from the ultra-low-power BACKUP mode</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th align="center"><strong>Pin</strong></th><th align="center"><strong>Digital</strong></th><th align="center"><strong>Interrupt</strong></th><th align="center"><strong>Analog</strong></th><th align="center"><strong>I2C</strong></th><th align="center"><strong>SPI</strong></th><th align="center"><strong>UART</strong></th><th align="center"><strong>PWM</strong></th><th align="center"><strong>Ext. Wake</strong></th></tr></thead><tbody>
+<tr><td align="center"><strong>A0</strong></td><td align="center">PB04</td><td align="center">EIC/EXTINT[4]</td><td align="center">ADC/AIN[12]</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr>
+<tr><td align="center"><strong>SCL</strong></td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">SCL<br>SERCOM1[1]</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr>
+<tr><td align="center"><strong>SDA</strong></td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">SDA<br>SERCOM1[0]</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr>
+<tr><td align="center"><strong>A1</strong></td><td align="center">PB01</td><td align="center">EIC/EXTINT[1]</td><td align="center">ADC/AIN[9]</td><td align="center">—</td><td align="center">SCK<br>SERCOM3[3]</td><td align="center">RX<br>SERCOM3[3]</td><td align="center">TC3[1]</td><td align="center">—</td></tr>
+<tr><td align="center"><strong>A2</strong></td><td align="center">PB02</td><td align="center">EIC/EXTINT[2]</td><td align="center">ADC/AIN[10]</td><td align="center">—</td><td align="center">MOSI<br>SERCOM3[0]</td><td align="center">TX or RX<br>SERCOM3[0]</td><td align="center">TC2[0]</td><td align="center">RTC/IN[1]</td></tr>
+<tr><td align="center"><strong>A3</strong></td><td align="center">PB03</td><td align="center">EIC/EXTINT[3]</td><td align="center">ADC/AIN[11]</td><td align="center">—</td><td align="center">CS<br>SERCOM3[1]</td><td align="center">RX<br>SERCOM3[1]</td><td align="center">TC2[1]</td><td align="center">—</td></tr>
+<tr><td align="center"><strong>A4</strong></td><td align="center">PB00</td><td align="center">EIC/EXTINT[0]</td><td align="center">ADC/AIN[8]</td><td align="center">—</td><td align="center">MISO<br>SERCOM3[2]</td><td align="center">TX or RX<br>SERCOM3[2]</td><td align="center">TC3[0]</td><td align="center">RTC/IN[0]</td></tr>
+</tbody></table>
+<p>These tiny “sensor boards” have a set outline, and the available area for your electronics is quite small (5.7 × 5.7 × 1 mm). Still, this is plenty of room for an environmental sensor, MEMS accelerometer or magnetometer and a couple of decoupling capacitors. Note that you will likely be limited to QFN and LGA type parts; SOICs are too large, and even SSOP packages are generally too thick. You can find reference designs for several sensor boards in the <code>PCB/Sensor Boards</code> directory within this repository.</p>
+<h2 id="getting-code-on-the-watch"><a class="header" href="#getting-code-on-the-watch">Getting code on the watch</a></h2>
+<p>The watch library in this repository is very work-in-progress, but it should allow you to get started. To create a new project, copy the “starter-project” folder in the apps folder, and write your code in the app.c file.</p>
+<p>You will need to install <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads/">the GNU Arm Embedded Toolchain</a> to build projects for the watch. The watch library has been tested with the <code>9-2019-q4-major</code> version and the <code>10.3-2021.07</code> versions.</p>
+<p>To build your project, open your terminal and navigate to the project's <code>make</code> folder, then type <code>make</code>.</p>
+<p>To install the project onto your Sensor Watch board, plug the watch into your USB port and double tap the tiny Reset button on the back of the board. You should see the LED light up red and begin pulsing. (If it does not, make sure you didn’t plug the board in upside down). Once you see the “WATCHBOOT” drive appear on your desktop, type <code>make install</code>. This will convert your compiled program to a UF2 file, and copy it over to the watch.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="next" href="wig/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="next" href="wig/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
