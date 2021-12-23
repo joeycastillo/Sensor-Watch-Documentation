@@ -19,7 +19,10 @@ Sensor Watch inherits many of the same hardware limitations of the F-91W: the sc
 * If you have more than one screen of information to display, you should hide it behind a press of either the "Alarm" or "Light" buttons...
 * ...because your watch face should be prepared to resign immediately when the wearer presses the "Mode" button. (More on this in the "buttons" section!)
 
-Let's look at some of the watch faces that come with Sensor Watch to see how these are implemented in practice:
+Let's look at some of the watch faces that come with Sensor Watch to see how these are implemented in practice.
+
+The Temperature Watch Face
+--------------------------
 
 ![Rendering: a temperature display app, showing the curent temperature of 68.7 degrees Fahrenheit](images/temperature-app.png)
 
@@ -29,7 +32,10 @@ This watch face, while simple, is dominated by a single large piece of informati
 
 Also note that the "signal" indicator segment, used on the main watch face to indicate the status of the hourly beep, is here repurposed to indicate when a new reading is being taken. Don't be afraid to use these indicators for your own purposes; whereas the bell indicator might signal that an alarm is enabled on an alarm watch face, you may want to use it to signal an error or warning condition on another face.
 
-The temperature display face is relatively simple; let's take a look at a more complex watch face, the temperature log:
+The temperature display face is relatively simple; let's take a look at a more complex watch face.
+
+The Temperature Log Watch Face
+------------------------------
 
 ![Rendering: a temperature logging app, showing the logged temperature of 68.7 degrees Fahrenheit, and a 0 at the top right](images/temperature-log-app.png)
 
@@ -55,14 +61,17 @@ Repeated presses of the "Alarm" button move the wearer back in time, and at any 
 
 Generally speaking, you should use the "Alarm" button to move through time or advance values, and use the "Light" button to move between sub-modes within the watch face. The "Time Set" watch face, for example, uses the "Light" button to move between setting the hour, minute and second, and uses the Alarm button to change the value in each field.
 
-Wrapping up:
+Wrapping Up
+-----------
 
 When designing watch face visuals for the Sensor Watch, you should aim to present one screen of content with clarity:
+
 * Don't shy from information density; use as many digits and indicators as you need.
 * Try to fit more crucial information on the left side of the screen, and put less pressing information on the right.
 * Don't worry about how segments or digits are used on other watch faces; when your watch face is on screen, you are in control.
 
 When designing interactions for the Sensor Watch, you should aim for consistency with other watch faces:
+
 * Your watch face should resign immediately when the "Mode" button is pressed and pass control to the next watch face in the list.
 * If your watch face has multiple modes, you should use the "Light" button to toggle or advance through them.
 * If your watch face presents multiple data points or advances through multiple values, you should use the "Alarm" button to advance through those.
