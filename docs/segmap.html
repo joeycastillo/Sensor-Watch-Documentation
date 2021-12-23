@@ -32,7 +32,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
     <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     <style>
-    body {font-family: Helvetica, Arial, sans-serif;}
+    body {font-family: Helvetica, Arial, sans-serif; background-color: #808080;}
+    a {color: #001d5c;}
     /*arrow and border color depending on where the tooltip opens (for example above or below the element)*/
     .tooltipster-sidetip.tooltipster-punk.tooltipster-top
 
@@ -53,6 +54,13 @@
         $('.tooltip').tooltipster({
         theme: 'tooltipster-punk',
         contentAsHTML: true
+        });
+        $(".tooltip").click(function() {
+            if (this.style.fill == "rgb(48, 66, 70)") { // tell me javascript doesn't _actually_ work this way?
+                this.style.fill = "#777b7a";
+            } else {
+                this.style.fill = "#304246";
+            }
         });
     });
     </script>
