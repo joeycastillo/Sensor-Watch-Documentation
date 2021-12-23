@@ -1,6 +1,6 @@
 # Summary
 
-- [Homepage](README.md)
+- [The Sensor Watch](README.md)
 
 ---
 
