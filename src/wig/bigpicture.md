@@ -11,6 +11,8 @@ The Casio F-91W, the donor watch on which Sensor Watch is based, is one of Casio
     * the "Light" button illuminates the watch face,
     * and the "Alarm" button is the only truly multi-function button: it changes which alarms are set when the alarm face is active, and swaps the main 12/24 hour mode when the main clock is active.
 
+![Rendering: a Casio F-91W displaying the time and date (just after noon on Thursday the 9th)](images/casio-basics.png)
+
 Sensor Watch inherits many of the same hardware limitations of the F-91W: the screen is small, the layout is designed to display no more than ten characters at a time, and we have only those three buttons to work with (one of which is dedicated to switching modes). This leads to some broad guidelines that will be useful to think about when designing your watch face:
 
 * Your watch face's main interface should focus on presenting a single screen of useful information.
@@ -49,14 +51,11 @@ For clarity, it would be nice for this screen to display not just the index of t
 
 This mode simply displays the timestamp for a second or so (this reading was taken at 12:00 AM on the 25th day of the month), and then returns the wearer to the temperature reading at that timestamp. This is a simple way to stack two aspects of the data point into one screen. If you had multiple aspects (say, temperature, humidity and timestamp) you might consider using the light button to cycle through the three screens.
 
-So that handles the most recent temperature and timestamp. But what about our 36 hour log? The answer there lies in the other button, the "Alarm" button. Pressing the "Alarm" button moves one index back in the list of readings.
+So that handles the most recent temperature and timestamp. But what about our 36 hour log? The answer there lies in the other button, the "Alarm" button. Pressing the "Alarm" button moves one index back in the list of readings:
 
 ![Rendering: the app shows a logged temperature of 67.9 degrees Fahrenheit, and a 1 at the top right. To the right, a second screen displays "At 11:00 PM" with a 24 at the top right](images/temperature-log-app-1.png)
 
-Once again, we've managed to fit more information onto the screen by hiding it behind a button press. The index at the top right makes clear that this is data point 1 (not data point 0), and again, pressing the "Light" button on this screen will display the timestamp for this reading: 11:00 PM on the 24th:
-
-
-Repeated presses of the "Alarm" button move the wearer back in time, and at any time the wearer can press the "light" button to view the timestamp. And of course, the wearer can press "Mode" at any time to move from the temperature log face to the next face in the list.
+Once again, we've managed to fit more information onto the screen by hiding it behind a button press. The index at the top right makes clear that this is data point 1 (not data point 0), and again, pressing the "Light" button on this screen will display the timestamp for this reading: 11:00 PM on the 24th. Repeated presses of the "Alarm" button move the wearer back in time. At any time, the wearer can press the "Light" button to view the timestamp. And of course, the wearer can press "Mode" at any time to move from the temperature log face to the next face in the list.
 
 Generally speaking, you should use the "Alarm" button to move through time or advance values, and use the "Light" button to move between sub-modes within the watch face. The "Time Set" watch face, for example, uses the "Light" button to move between setting the hour, minute and second, and uses the Alarm button to change the value in each field.
 
