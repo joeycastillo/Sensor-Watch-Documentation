@@ -36,4 +36,4 @@ These differences have implications for how a watch face displays content, how t
 Road Map
 --------
 
-This document is divided into five sections. First, we'll talk about [the "big picture" stuff](/wig/bigpicture.md): some of the concepts you should keep in mind when designing watch faces for Sensor Watch, some of what it does well, and some of what it doesn't. Next, we'll have three sections dedicated to each of those three key areas of functionality: the display, the buttons, and the low-power microcontroller. Finally, we'll bring all of these concepts together to make a very simple watch face that says hello.
+This document is divided into five sections. First, we'll talk about [the "big picture" stuff](wig/bigpicture.md): some of the concepts you should keep in mind when designing watch faces for Sensor Watch, some of what it does well, and some of what it doesn't. Next, we'll have three sections dedicated to each of those three key areas of functionality: the display, the buttons, and the low-power microcontroller. Finally, we'll bring all of these concepts together to make a very simple watch face that says hello.
