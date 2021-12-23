@@ -10,3 +10,4 @@
   - [Sensor Watch Buttons]()
   - [Sensor Watch Power Management]()
   - [Putting It All Together]()
+- [404 Page](404.md)
