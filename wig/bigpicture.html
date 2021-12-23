@@ -156,12 +156,14 @@
 <li>If you have more than one screen of information to display, you should hide it behind a press of either the &quot;Alarm&quot; or &quot;Light&quot; buttons...</li>
 <li>...because your watch face should be prepared to resign immediately when the wearer presses the &quot;Mode&quot; button. (More on this in the &quot;buttons&quot; section!)</li>
 </ul>
-<p>Let's look at some of the watch faces that come with Sensor Watch to see how these are implemented in practice:</p>
+<p>Let's look at some of the watch faces that come with Sensor Watch to see how these are implemented in practice.</p>
+<h2 id="the-temperature-watch-face"><a class="header" href="#the-temperature-watch-face">The Temperature Watch Face</a></h2>
 <p><img src="images/temperature-app.png" alt="Rendering: a temperature display app, showing the curent temperature of 68.7 degrees Fahrenheit" /></p>
 <p>This is the Temperature watch face. It displays the current temperature, as read from a thermistor voltage divider on a Sensor Watch accessory board.</p>
 <p>This watch face, while simple, is dominated by a single large piece of information: the current temperature. The wearer is able to absorb this information quickly and easily. The temperature data itself is left-justified; if the LED only illuminated the first two digits, the wearer would at least know the temperature is in the range of 68 degrees; the fractional part, while useful, is not essential to a quick read of the temperature.</p>
 <p>Also note that the &quot;signal&quot; indicator segment, used on the main watch face to indicate the status of the hourly beep, is here repurposed to indicate when a new reading is being taken. Don't be afraid to use these indicators for your own purposes; whereas the bell indicator might signal that an alarm is enabled on an alarm watch face, you may want to use it to signal an error or warning condition on another face.</p>
-<p>The temperature display face is relatively simple; let's take a look at a more complex watch face, the temperature log:</p>
+<p>The temperature display face is relatively simple; let's take a look at a more complex watch face.</p>
+<h2 id="the-temperature-log-watch-face"><a class="header" href="#the-temperature-log-watch-face">The Temperature Log Watch Face</a></h2>
 <p><img src="images/temperature-log-app.png" alt="Rendering: a temperature logging app, showing the logged temperature of 68.7 degrees Fahrenheit, and a 0 at the top right" /></p>
 <p>This watch face stores a 36-hour log of temperature values, which the wearer can read back to get a sense of high and low temperatures. This seems at first glance like it might be a formidable challenge for a watch face with only ten digits, but by thinking carefully about the design, we can fit a lot of information on this small screen.</p>
 <p>Let's revisit the first guideline. This screen displays a useful, information-dense readout of the most recent temperature logged: the &quot;TL&quot; indicates the mode, and the &quot;0&quot; at the top right indicates that this is the zeroth (i.e. most recent) reading taken. The whole bottom line is dedicated to a large, clear display of the logged temperature.</p>
@@ -174,7 +176,7 @@
 <p><img src="images/temperature-log-app-timestamp-1.png" alt="Rendering: the app displays &quot;At 11:00 PM&quot; with a 24 at the top right" /></p>
 <p>Repeated presses of the &quot;Alarm&quot; button move the wearer back in time, and at any time the wearer can press the &quot;light&quot; button to view the timestamp. And of course, the wearer can press &quot;Mode&quot; at any time to move from the temperature log face to the next face in the list.</p>
 <p>Generally speaking, you should use the &quot;Alarm&quot; button to move through time or advance values, and use the &quot;Light&quot; button to move between sub-modes within the watch face. The &quot;Time Set&quot; watch face, for example, uses the &quot;Light&quot; button to move between setting the hour, minute and second, and uses the Alarm button to change the value in each field.</p>
-<p>Wrapping up:</p>
+<h2 id="wrapping-up"><a class="header" href="#wrapping-up">Wrapping Up</a></h2>
 <p>When designing watch face visuals for the Sensor Watch, you should aim to present one screen of content with clarity:</p>
 <ul>
 <li>Don't shy from information density; use as many digits and indicators as you need.</li>
