@@ -13,7 +13,7 @@ You'll wear Sensor Watch on your wrist, and you'll interact with it to answer qu
 
 *Example: a tide prediction app, showing the time of the high tide and its predicted height.*
 
-Even when you add sensors like a thermometer, light sensor or accelerometer, you should think about how your watch face can answer these kinds of simple questions. “How cold was it last night?” “What shutter speed should I use for this lighting?” “Was I active enough today?”
+Even when you add sensors like a thermometer, light sensor or accelerometer, you should think about how your watch face can answer these kinds of simple questions. “How cold was it last night?” “What shutter speed should I use in this lighting?” “Was I active enough today?”
 
 Keeping these prompts simple keeps the focus on the things that Sensor Watch can do well, because:
 
