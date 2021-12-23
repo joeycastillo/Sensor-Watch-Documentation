@@ -1,0 +1,6 @@
+[book]
+title = "Sensor Watch Documentation"
+author = "Joey Castillo"
+
+[output.html]
+site-url = "/Sensor-Watch-Documentation/"
