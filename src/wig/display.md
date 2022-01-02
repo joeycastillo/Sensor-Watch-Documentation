@@ -103,7 +103,7 @@ You saw this guideline before in the “Big Picture” section, but it bears rep
 
 ### Limitations of the Clock digits
 
-As you might have expected, there are some limitations to the clock digits. The first limitation applies to all of them: these are 7-segment displays meant to display numbers, not letters. As such, characters like ‘M’ and ‘W’ are not available; they will render as a ‘U’ or an ‘N’. Additionally, some letters aren’t available in their preferred case; uppercase ‘R’, for example, will appear as a lowercase ‘r’. Finally, some of these characters may look a bit awkward. ‘K’, for example, requires a little bit of imagination, and ‘X’ requires a lot of imagination; the screens below are meant to display the words “Ranked” and “Pixel”:
+As you might have expected, there are some limitations to the clock digits. The first limitation applies to all of them: these are 7-segment displays meant to display numbers, not letters. As such, characters like ‘M’ and ‘W’ are not available; they will render as a ‘U’ or an ‘N’. Additionally, some letters aren’t available in their preferred case; uppercase ‘R’, for example, will appear as a lowercase ‘r’. Finally, some of these characters may look a bit awkward. ‘K’, for example, requires a little bit of imagination, and ‘X’ requires a lot of imagination; the screens below are meant to display the words “Ranked” and “PIXEL”:
 
 ![TODO: Two watch faces displaying the words “ranked” and “pixel”](images/clock-ranked-pixel.png)
 
