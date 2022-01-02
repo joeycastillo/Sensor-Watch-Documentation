@@ -1,7 +1,7 @@
 Big Picture Stuff
 =================
 
-The Casio F-91W, the donor watch on which Sensor Watch is based, is one of Casio’s smallest and simplest wristwatch designs. It is designed to show very basic information: the date and time. As we walk through the device’s hardware capabilities, we can see how it is tailored carefully to that use case:
+The Casio F‑91W, the donor watch on which Sensor Watch is based, is one of Casio’s smallest and simplest wristwatch designs. It is designed to show very basic information: the date and time. As we walk through the device’s hardware capabilities, we can see how it is tailored carefully to that use case:
 
 * It has a small segment liquid crystal display with ten digits.
 * It has a dim backlight on the left side of the display that mostly illuminates the hours and minutes.
@@ -11,9 +11,9 @@ The Casio F-91W, the donor watch on which Sensor Watch is based, is one of Casio
     * the “Mode” button cycles through the four modes that the watch offers,
     * and the “Alarm” button is the only truly multi-function button: it turns the alarms on or off when the alarm face is active, and swaps the main 12/24 hour mode when the main clock is active.
 
-![Rendering: a Casio F-91W displaying the time and date (just after noon on Thursday the 9th)](images/casio-basics.png)
+![Rendering: a Casio F‑91W displaying the time and date (just after noon on Thursday the 9th)](images/casio-basics.png)
 
-Sensor Watch inherits many of the same hardware limitations of the F-91W: the screen is small, the layout is designed to display no more than ten characters at a time, and we have only those three buttons to work with (one of which is dedicated to switching modes). This leads to some broad guidelines that will be useful to think about when designing your watch face:
+Sensor Watch inherits many of the same hardware limitations of the F‑91W: the screen is small, the layout is designed to display no more than ten characters at a time, and we have only those three buttons to work with (one of which is dedicated to switching modes). This leads to some broad guidelines that will be useful to think about when designing your watch face:
 
 * Your watch face’s main interface should focus on presenting a single screen of useful information.
 * If possible, your most important information should appear on the left side of the screen, since the LED will illuminate the left side more brightly than the right.

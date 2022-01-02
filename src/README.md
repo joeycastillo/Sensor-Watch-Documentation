@@ -1,7 +1,7 @@
 The Sensor Watch
 ================
 
-The Sensor Watch is a board replacement for the classic Casio F-91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.
+The Sensor Watch is a board replacement for the classic Casio F‑91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.
 
 ![Photo: a close-up of the Sensor Watch circuit board, and a wristwatch displaying the word “Hello”](images/sensor-watch.jpg)
 
