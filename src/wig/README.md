@@ -19,7 +19,7 @@ Keeping these prompts simple keeps the focus on the things that Sensor Watch can
 
 #### Sensor Watch is not a smart watch
 
-While Sensor Watch can have sensors added to it to measure things like temperature, light or acceleration, it’s not generally designed to synchronize these measurements to another device like a smart phone; in fact, by default, it has no way of syncing data to or from a device. This makes Sensor Watch less well suited to answering complex questions with that require external data or a longer data trail; questions like “Will it rain tomorrow” require data the watch does not have, and questions like “How active was I last month?“ may be too complex to answer on a small watch with only a few buttons.
+While Sensor Watch can have sensors added to it to measure things like temperature, light or acceleration, it’s not generally designed to synchronize these measurements to another device like a smart phone; in fact, by default, it has no way of syncing data to or from a device. This makes Sensor Watch less well suited to answering complex questions that require external data or a longer data trail; questions like “Will it rain tomorrow” require data the watch does not have, and questions like “How active was I last month?“ may be too complex to answer on a small watch with only a few buttons.
 
 There are three key hardware differences between Sensor Watch and a smart watch:
 
