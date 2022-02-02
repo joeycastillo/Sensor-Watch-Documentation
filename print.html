@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> The Sensor Watch</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="wig/index.html"><strong aria-hidden="true">2.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="wig/bigpicture.html"><strong aria-hidden="true">2.1.</strong> Big Picture Stuff</a></li><li class="chapter-item expanded "><a href="wig/display.html"><strong aria-hidden="true">2.2.</strong> Sensor Watch Display</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Putting It All Together</div></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> The Sensor Watch</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="wig/index.html"><strong aria-hidden="true">2.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="wig/bigpicture.html"><strong aria-hidden="true">2.1.</strong> Big Picture Stuff</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Sensor Watch Display</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.5.</strong> Putting It All Together</div></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -136,7 +136,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="the-sensor-watch"><a class="header" href="#the-sensor-watch">The Sensor Watch</a></h1>
-<p>The Sensor Watch is a board replacement for the classic Casio F‑91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.</p>
+<p>The Sensor Watch is a board replacement for the classic Casio F-91W wristwatch. It is powered by a Microchip SAM L22 microcontroller with built-in segment LCD controller. You can write your own programs for the watch using the provided watch library, program the watch over USB using the built-in UF2 bootloader, and then install the board in your existing watch case to run your own software on your wrist.</p>
 <p><img src="images/sensor-watch.jpg" alt="Photo: a close-up of the Sensor Watch circuit board, and a wristwatch displaying the word “Hello”" /></p>
 <p>Features:</p>
 <ul>
@@ -187,7 +187,7 @@
 <p>Even when you add sensors like a thermometer, light sensor or accelerometer, you should think about how your watch face can answer these kinds of simple questions. “How cold was it last night?” “What shutter speed should I use in this lighting?” “Was I active enough today?”</p>
 <p>Keeping these prompts simple keeps the focus on the things that Sensor Watch can do well, because:</p>
 <h4 id="sensor-watch-is-not-a-smart-watch"><a class="header" href="#sensor-watch-is-not-a-smart-watch">Sensor Watch is not a smart watch</a></h4>
-<p>While Sensor Watch can have sensors added to it to measure things like temperature, light or acceleration, it’s not generally designed to synchronize these measurements to another device like a smart phone; in fact, by default, it has no way of syncing data to or from a device. This makes Sensor Watch less well suited to answering complex questions that require external data or a longer data trail; questions like “Will it rain tomorrow” require data the watch does not have, and questions like “How active was I last month?“ may be too complex to answer on a small watch with only a few buttons.</p>
+<p>While Sensor Watch can have sensors added to it to measure things like temperature, light or acceleration, it’s not generally designed to synchronize these measurements to another device like a smart phone; in fact, by default, it has no way of syncing data to or from a device. This makes Sensor Watch less well suited to answering complex questions with that require external data or a longer data trail; questions like “Will it rain tomorrow” require data the watch does not have, and questions like “How active was I last month?“ may be too complex to answer on a small watch with only a few buttons.</p>
 <p>There are three key hardware differences between Sensor Watch and a smart watch:</p>
 <ul>
 <li>Whereas a smart watch has a high-resolution screen capable of displaying arbitrary graphics, Sensor Watch has a segment LCD with a fixed layout.</li>
@@ -203,7 +203,7 @@
 <h2 id="road-map"><a class="header" href="#road-map">Road Map</a></h2>
 <p>This document is divided into five sections. First, we’ll talk about <a href="wig/bigpicture.html">the “big picture” stuff</a>: some of the concepts you should keep in mind when designing watch faces for Sensor Watch, some of what it does well, and some of what it doesn’t. Next, we’ll have three sections dedicated to each of those three key areas of functionality: the display, the buttons, and the low-power microcontroller. Finally, we’ll bring all of these concepts together to make a very simple watch face that says hello.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="big-picture-stuff"><a class="header" href="#big-picture-stuff">Big Picture Stuff</a></h1>
-<p>The Casio F‑91W, the donor watch on which Sensor Watch is based, is one of Casio’s smallest and simplest wristwatch designs. It is designed to show very basic information: the date and time. As we walk through the device’s hardware capabilities, we can see how it is tailored carefully to that use case:</p>
+<p>The Casio F-91W, the donor watch on which Sensor Watch is based, is one of Casio’s smallest and simplest wristwatch designs. It is designed to show very basic information: the date and time. As we walk through the device’s hardware capabilities, we can see how it is tailored carefully to that use case:</p>
 <ul>
 <li>It has a small segment liquid crystal display with ten digits.</li>
 <li>It has a dim backlight on the left side of the display that mostly illuminates the hours and minutes.</li>
@@ -216,8 +216,8 @@
 </ul>
 </li>
 </ul>
-<p><img src="wig/images/casio-basics.png" alt="Rendering: a Casio F‑91W displaying the time and date (just after noon on Thursday the 9th)" /></p>
-<p>Sensor Watch inherits many of the same hardware limitations of the F‑91W: the screen is small, the layout is designed to display no more than ten characters at a time, and we have only those three buttons to work with (one of which is dedicated to switching modes). This leads to some broad guidelines that will be useful to think about when designing your watch face:</p>
+<p><img src="wig/images/casio-basics.png" alt="Rendering: a Casio F-91W displaying the time and date (just after noon on Thursday the 9th)" /></p>
+<p>Sensor Watch inherits many of the same hardware limitations of the F-91W: the screen is small, the layout is designed to display no more than ten characters at a time, and we have only those three buttons to work with (one of which is dedicated to switching modes). This leads to some broad guidelines that will be useful to think about when designing your watch face:</p>
 <ul>
 <li>Your watch face’s main interface should focus on presenting a single screen of useful information.</li>
 <li>If possible, your most important information should appear on the left side of the screen, since the LED will illuminate the left side more brightly than the right.</li>
@@ -255,114 +255,6 @@
 <li>Your watch face should resign immediately when the “Mode” button is pressed and pass control to the next watch face in the list.</li>
 <li>If your watch face has multiple modes, you should use the “Light” button to toggle or advance through them.</li>
 <li>If your watch face presents multiple data points or advances through multiple values, you should use the “Alarm” button to advance through those.</li>
-</ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="the-sensor-watch-display"><a class="header" href="#the-sensor-watch-display">The Sensor Watch Display</a></h1>
-<p>Before we talk about the Sensor Watch display, let’s go through some key terminology to clarify our discussion: </p>
-<ul>
-<li>Segment - A single addressable element on the liquid crystal display</li>
-<li>Indicator - A segment like “PM”, “24H” or the bell icon that indicates status</li>
-<li>Digit - A grouping of segments that can display a number, character or glyph</li>
-<li>Position - The placement of a digit on the display; for example, the first digit at the left of the top row is Position 0</li>
-</ul>
-<p>We also tend to label the segments of each digit clockwise from the top segment: the top segment is segment A, top right is B, bottom right is C, all the way to the center digit which is segment G:</p>
-<p><img src="wig/images/segments-labeled.png" alt="TODO: A diagram of a single digit with its segments labeled" /></p>
-<p>In this image of a clock, you can see where the 8 has all segments (A-G) energized. You can display a 1 by energizing only segments B and C, and a 2 by energizing segments A, B, D, E and G.</p>
-<p>The Sensor Watch has five indicators, ten digits, and one segment dedicated to the colon in the time display. We choose to number the digits as follows: </p>
-<ul>
-<li>Positions 0-1 - The digits in the top middle, usually used to display the current mode or the weekday. We can call these the “Weekday” digits.</li>
-<li>Positions 2-3 - The digits at the top right, usually used to display the day of the month. The “Day” digits.</li>
-<li>Positions 4-9 - The digits on the bottom row, usually used to display the time; the “Clock” digits.
-<ul>
-<li>Positions 4-5 are normally the hours display.</li>
-<li>Positions 6-7 are normally the minutes display.</li>
-<li>Positions 8-9 are normally the seconds display, and are slightly smaller than the other digits on the bottom row.</li>
-</ul>
-</li>
-</ul>
-<p><img src="wig/images/positions-labeled.png" alt="TODO: A diagram of the F‑91W LCD with positions grouped and labeled" /></p>
-<p>As alluded to in the “Big Picture” section, this document is not going to be prescriptive about how you use the digits in these positions; there is no “must” about how you display information on your watch face. Still, there are some broad guidelines on where these digits can be most useful:</p>
-<ul>
-<li>The “Weekday” digits are particularly useful for displaying alphanumeric information.</li>
-<li>The “Day” digits are best for displaying a single number from 0-39, such as a day, an index or a countdown.</li>
-<li>The “Clock” digits are well suited for the main informational display of your watch face.</li>
-</ul>
-<p>You are going to need flexibility to adapt the information you want to display to the Sensor Watch LCD. This section is merely going to walk through some useful patterns, some limitations, and some best practices. </p>
-<h2 id="the-weekday-digits"><a class="header" href="#the-weekday-digits">The Weekday Digits</a></h2>
-<p>The digits in these first two positions, positions 0 and 1, have some extra segments that make them useful for displaying letters. The stock F‑91W uses these positions to display the day of the week (SU, MO, TU, etc). If you have some alphanumeric information to relay on your watch face, it would make sense to look to these first; the tide prediction concept in the previous section, for example, imagined labeling the displayed prediction with “HT” for high tide and “LT” for low tide.</p>
-<p>If you have no data to put in these segments, they can also serve as a useful spot to title your watch face, so that the wearer is clear what information they are looking at. The “Temperature” watch face, for example, uses these digits to display “TE”. This distinguishes it from the “Temperature Log” watch face, which titles itself “TL”.</p>
-<p>Note that you are not limited to keeping the same characters in this position the whole time your watch face is on screen! The “Temperature Log” watch face displays “TL” most of the time, but when the wearer enters timestamp mode, it displays the word “AT” in these positions, signaling that the data point was logged “at” the displayed time and date. </p>
-<p><img src="wig/images/temperature-log-app-timestamp.png" alt="Rendering: a temperature logging app, showing the logged temperature of 68.7 degrees Fahrenheit, and a 0 at the top right. A second screen to the right displays “At 12:00” with a 25 at the top right" /></p>
-<p>Consider: when the wearer presses the “Mode” button and sees the watch face for the first time, “TL” tells them which watch face they are viewing. Once they have that information, they know they will remain in this watch face until they press “Mode” again, so you can feel free to change it after a short delay or in response to a button press. It’s done its job, and given the wearer the context they need to use the watch in the current mode.</p>
-<p>Of course, you could use these segments in a completely different way. The LIS2DH accelerometer test face (which we’ll look at a bit later) uses these two positions to indicate the presence of an interrupt on the X or Y axes, lighting up “Y” and/or “X” when an interrupt is asserted, and remaining blank otherwise.</p>
-<h3 id="limitations-of-the-weekday-digits"><a class="header" href="#limitations-of-the-weekday-digits">Limitations of the Weekday Digits</a></h3>
-<p>On a stock Casio F‑91W, the digits in these two positions normally display one of just nine values: abbreviations for the seven days of the week, the text “AL” for alarm mode, or the text “ST” for stopwatch mode. If you break this down, position 0 will only ever display one of the characters A, F, M, S, T or W, and position 1 will only display the letters A, E, H, L, O, R, T, or U. The Sensor Watch aims to display many more characters in these positions, and in the case of position 0, we can do it! With the exception of an uppercase R, the digit in position 0 can display any character in the Sensor Watch character set.</p>
-<p><img src="wig/images/weekday-shared-segments.png" alt="TODO: A diagram of the F‑91W’s Weekday Digits with position’s 1 shared segments highlighted in red." /></p>
-<p>Position 1 is a bit more trouble. Looking closely at the position 1 letters above, you’ll notice that segments B/C and E/F never have to operate independently (as they would to, say, display the letter S or the number 2). Thus, to save pins on the LCD, the designers of the F‑91W tied these two pairs of segments together. This means you can only display a limited set of characters in position 1: the letters A, B, C, D, E, F, H, I, J, L, N, O, R, T, U and X, and the numbers 0, 1, 3, 7 and 8.</p>
-<p>All of this is to say that you may need to think about terminology that makes sense for your watch face, and tweak it to fit the constraints. For example, the “Settings” watch face requires changing a setting related to Movement’s low power mode, but the ‘P’ in “LP” cannot be displayed in position 1. To address this limitation, the setting is instead called “Low Energy” mode, which abbreviates to “LE”.</p>
-<p>The theme of limitations will come up in each of these groups.</p>
-<h2 id="the-day-digits"><a class="header" href="#the-day-digits">The Day Digits</a></h2>
-<p>On a stock Casio F‑91W, these two digits normally display the day of the month. This makes this position very useful for displaying values from 0-39:</p>
-<ul>
-<li>The Clock and World Clock face use this area to display the day of the month.</li>
-<li>The TOTP watch face uses this area for a 30-second countdown, indicating the validity window for the displayed code</li>
-<li>The Temperature Log uses this area to display the index of the logged measurement, from 0 to 35</li>
-</ul>
-<p><img src="wig/images/day-example.png" alt="TODO: Three watch faces showing these uses." /></p>
-<h3 id="limitations-of-the-day-digits"><a class="header" href="#limitations-of-the-day-digits">Limitations of the Day digits</a></h3>
-<p>While the digit in position 3 is a full-featured 7-segment display that can display any number and just about any letter, the digit in position 2 is the most limited digit on the watch: it can only display the numbers 1, 2 and 3. This constraint relates to the fact that it is missing one segment (segment F), and that segments A, D and G are all tied together.</p>
-<p><img src="wig/images/day-shared-segments.png" alt="TODO: A diagram of the F‑91W’s Weekday Digits with position’s 2 shared segments highlighted in red." /></p>
-<p>There’s not much to say about these digits because they are pretty limited: if you have a single letter or a number from 0-39, you can display it here. If not, you can leave these digits blank.</p>
-<h2 id="the-clock-digits"><a class="header" href="#the-clock-digits">The Clock Digits</a></h2>
-<p>The bottom row of digits, positions 4-9, comprise the clock display on a stock F‑91W. This is the main event: you can display a ton of information here. But before we look at some of the ways we might want to use this display, let’s take a look at some of the subtler properties of these digits:</p>
-<p><img src="wig/images/clock-with-without-colon.png" alt="TODO: Two watch faces showing 88:88 88 and 88 88 88." /></p>
-<ul>
-<li>First, note that the digits in positions 8-9, the seconds, are slightly smaller than the rest. This makes it obvious even without a colon that they are the seconds on a clock.</li>
-<li>Next, note the way that the colon separates positions 5 and 6 in the display on the left. This clarifies the separation of the hours and the minutes on the clock.</li>
-<li>Now look at the display on the right, where the colon is turned off. Note that in the absence of a colon, these digits are not evenly spaced: there is a gap between them.</li>
-</ul>
-<p><img src="wig/images/clock-example.png" alt="TODO: Three watch faces: HI: 87.2°, 10 20 30, Sunset." /></p>
-<p>These details are useful to keep in mind as you think about the data you want to display, as these subtleties lend themselves to some non-obvious strategies. For example: </p>
-<ul>
-<li>Consider how the visual weighting of the seconds digits could make them useful for displaying the decimal part of a floating point number, as shown in the display on the left (87.2°).</li>
-<li>Also on the left: consider how the colon might be useful both as a separator in a clock display, and as a punctuation mark separating two concepts, like the high temperature label and the measured temperature.</li>
-<li>Consider how the spacing of these digits might let you treat this line not as one six-digit display, but as three distinct two-digit displays. For example: 10, 20 and 30 could represent three separate data points in the display in the middle.</li>
-<li>Also consider how the wearer’s eye would read across the display if a full word were placed there, as in the display on the right. Do your eyes notice the gap, or does the word “Sunset” read legibly?</li>
-</ul>
-<p>You saw this guideline before in the “Big Picture” section, but it bears repeating: over time, the wearer will become familiar with the layout of your watch face, so don’t be afraid to use these digits in an unorthodox way.</p>
-<h3 id="limitations-of-the-clock-digits"><a class="header" href="#limitations-of-the-clock-digits">Limitations of the Clock digits</a></h3>
-<p>As you might have expected, there are some limitations to the clock digits. The first limitation applies to all of them: these are 7-segment displays meant to display numbers, not letters. As such, characters like ‘M’ and ‘W’ are not available; they will render as an ‘N’ or a ‘U’ respectively. Additionally, some letters aren’t available in their preferred case; uppercase ‘R’, for example, will appear as a lowercase ‘r’. Finally, some of these characters may look a bit awkward. ‘K’, for example, requires a little bit of imagination, and ‘X’ requires a lot of imagination; the screens below are meant to display the words “Ranked” and “PIXEL”:</p>
-<p><img src="wig/images/clock-ranked-pixel.png" alt="TODO: Two watch faces displaying the words “ranked” and “pixel”" /></p>
-<p>The second limitation has to do specifically with digits 4 and 6: the top and bottom segments of these digits (segments A and D) are tied together:</p>
-<p><img src="wig/images/clock-shared-segments.png" alt="TODO: The shared segments on the clock display" /></p>
-<p>The Sensor Watch display library will try to work around this limitation in some cases. For example, some letters may have their case changed: in displaying the word “Apogee” below, the Sensor Watch will render the “a” in lowercase and the ‘O’ in uppercase — “apOgee” — to work around the constraints on positions 4 and 6. This is because position 4 cannot turn off segment D without also turning off segment A, as would be required for an uppercase ‘A’, and position 6 cannot turn on segment D without also turning on segment A, as would be required for a lowercase ‘o’.</p>
-<p><img src="wig/images/clock-apogee.png" alt="TODO: The word “Apogee”, mangled on the left, but displayed correctly on the right" /></p>
-<p>Other characters may take on slightly different forms in these positions: for example, a 7 in position 4 or 6 will render as a short “lowercase” 7, and characters that require a segment on the top or bottom may be shifted up or down to make the best use of the position.</p>
-<p><img src="wig/images/clock-7-up.png" alt="TODO: Two watch faces: and the word 7-up twice" /></p>
-<p>With some extra care, you can sometimes dodge this limitation. In the two screens above, for example, you can see that displaying the name of this popular soft drink in positions 4-7 results in a lowercase 7, and a U that’s shifted up to the top half of the digit. But by shifting it over to positions 5-8, both the 7 and the U get displayed normally.</p>
-<p><img src="wig/images/clock-high-tide.png" alt="TODO: “Hi Eide”, “Hi  tid”, “TI HIGH”" /></p>
-<p>Note however that in some cases, you cannot dodge this limitation. Letters that can only be displayed by energizing segments A and D independently will not display correctly. In the above example, the lowercase ‘t’ in ‘Hi tide’ will not work in position 4 or 6. It will display as an uppercase E, “Hi Eide”, because segment D also controls the state of segment A. You will have to figure out another way to convey this concept, either by shifting the ‘t’ to a position that can display it, or re-imagining the way the information is presented to the wearer.</p>
-<p>Regardless of case, the following characters are fully unsupported in positions 4 and 6: F, K, P, Q, T, X and Y, as well as the underscore and a few other punctuation marks. In addition, the decimal point appears as a hyphen; this may lead to confusion when displaying negative numbers, so you may have to work around this as well.</p>
-<h2 id="the-indicator-segments"><a class="header" href="#the-indicator-segments">The Indicator Segments</a></h2>
-<p>In addition to the three major segmented display areas, the watch has five indicator segments: “Signal”, “Bell”, “PM”, “24H” and “LAP”. You can energize these indicator segments to convey information or status to the user. In the stock F‑91W, these have some fairly obvious uses: Signal and Bell indicate whether the hourly signal and alarm are active, and PM and 24H relate to the clock display. “LAP” only operates in stopwatch mode, where it indicates when the stopwatch is showing a lap time. Still, when looking at these indicators, you should consider what concepts people might have associated with these icons.</p>
-<p><img src="wig/images/indicators.png" alt="TODO: All indicators on" /></p>
-<p>The “Signal” indicator takes the form of a series of bars moving from thick to thin. It does convey the sound waves of an hourly indicator, but consider other possible meanings: they could represent radio waves, sensor activity or the reading of data from an accessory board. The Temperature watch face, for example, energizes this segment to indicate that a new reading is being taken from the thermistor.</p>
-<p>The “Bell” conveys the concept of an alarm bell, but consider alternate meanings like the presence of a notification or a warning condition. For example, a tide prediction face could energize this segment when high tide is very near — an important thing to know if you are walking along a remote stretch of beach!</p>
-<p>The PM indicator has the narrowest use case: if you are displaying a time value that is in the afternoon, you should activate this segment. This guidance also applies to the 24H indicator. Also note that Movement has a global setting that will tell you whether the user has selected 24H mode; you should respect this whenever displaying time values.</p>
-<p>Finally, the LAP indicator. This indicator has a very specific meaning for a stopwatch face, and almost no meaning anywhere else. The Stopwatch face uses this segment for its expected use case, but beyond that, it’s not a great semantic fit for most others. Having said that, if you need to indicate a rare warning or error condition, and none of the other indicators are a good fit, the LAP indicator might make sense. For example, the Simple Clock face energizes this segment when a low power condition is detected. It’s awkward, but it works.</p>
-<h2 id="putting-it-all-together"><a class="header" href="#putting-it-all-together">Putting It All Together</a></h2>
-<p>While the previous sections outlined how each of these bits of the display worked on their own, the fact is, you will mix and match these strategies. We’ve seen how the Temperature and Temperature Log watch faces use the Weekday digits to display their name (TE, TL) and a data point. But a Sunrise/Sunset face could use those characters to display something about the data point: that this is a sunSEt at 5:42 PM on the 5th, and a sunRIse at 6:24 AM on the 6th:</p>
-<p><img src="wig/images/sunrise-sunset-example.png" alt="TODO: sunrise/sunset face" /></p>
-<p>The accelerometer test face uses all of these areas in a radically different way. It uses the top row to indicate the presence of a Y, X or Z interrupt, and a single digit in the top right to count the last ten seconds to the logging of the next data point. The bottom line counts interrupts per minute, and displays the most recent three minutes’ counts in three two-digit groups on the clock line:</p>
-<p><img src="wig/images/accelerometer-example.png" alt="TODO: accelerometer face" /></p>
-<p>There’s also nothing that says you have to use these displays for digits at all. Here we imagine using the 12 vertical bars in the clock display to show an activity log over the last 12 hours, where the presence of a short bar indicates some activity in that hour, and a tall bar indicates more. You can imagine toggling this watch face between different timeframes, which could be displayed in the top right: 6/12/24, or 1d/2d/3d.</p>
-<p><img src="wig/images/activity-example.png" alt="TODO: activity log face" /></p>
-<h2 id="final-notes"><a class="header" href="#final-notes">Final Notes</a></h2>
-<p>The Sensor Watch display is both powerful and limited: we can push it to do things that a stock F‑91W couldn’t dream of, but it also inherits some of the limitations inherent to the donor watch. Still, armed with these guidelines, you should feel empowered to build useful and information-rich watch faces. The important things to remember:</p>
-<ul>
-<li>Keep in mind how the segments are grouped, and think about how you can make the information you want to display fit into those groups.</li>
-<li>Be mindful of the limitations of various digits and groups, and prepare to be flexible when naming things or laying out text.</li>
-<li>Don’t be afraid of information-dense displays or unorthodox uses of the LCD. The wearer using your watch face will develop a mental model for the information you’re presenting to them.</li>
-<li>Use indicators to signal various conditions, and keep in mind creative ways of using them to convey meaning to the wearer.</li>
 </ul>
 
                     </main>
