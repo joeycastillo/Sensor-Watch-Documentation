@@ -14,7 +14,7 @@ Also note that all of these have the "Preferences" and "Time Set" screens at the
 * [The Athlete](#the-athlete): Simple Clock, Stopwatch, Countdown, Exercise Counter, Pulsometer
 * [The Backpacker](#the-backpacker): Simple Clock, Sunrise/Sunset, Temperature, Temperature Log, Blinky Light
 * [The Stargazer](#the-stargazer): Simple Clock, Astronomy, Sunrise/Sunset, Moon Phase
-* [Deep Space Now](#deep-space-now): Simple Clock, Mars Time, World Clock x3 (for Goldstone, Madrid and Canberra)
+* [Deep Space Now](#deep-space-now): Simple Clock, Mars Time, World Clock x3
 * [alt.time](#alttime): Simple Clock, Beat Time, Day One
 
 Movement Standard
