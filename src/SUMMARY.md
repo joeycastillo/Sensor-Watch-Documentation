@@ -1,9 +1,14 @@
 # Summary
 
 - [The Sensor Watch](README.md)
-
----
-
+- [Firmware Info](firmware/README.md)
+  - [Prebuilt Firmware for Sensor Watch](firmware/prebuilt.md)
+  - [Building Sensor Watch Firmware]()
+  - [Building for the Sensor Watch Emulator]()
+- [More about Movement](movement/README.md)
+  - [Writing a watch face for Movement]()
+  - [Contributing to the Community Firmware]()
+  - [Tips and tricks for Movement]()
 - [Watch Interface Guidelines (WIG)](wig/README.md)
   - [Big Picture Stuff](wig/bigpicture.md)
   - [Sensor Watch Display](wig/display.md)
