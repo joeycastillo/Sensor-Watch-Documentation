@@ -179,24 +179,28 @@
 <p>These tiny “sensor boards” have a set outline, and the available area for your electronics is quite small (5.7 × 5.7 × 1 mm). Still, this is plenty of room for an environmental sensor, MEMS accelerometer or magnetometer and a couple of decoupling capacitors. Note that you will likely be limited to QFN and LGA type parts; SOICs are too large, and even SSOP packages are generally too thick. You can find reference designs for several sensor boards in <a href="https://github.com/joeycastillo/Sensor-Watch/tree/main/PCB/Sensor%20Boards">the PCB/Sensor Boards directory</a> in the Sensor Watch repository.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="sensor-watch-firmware"><a class="header" href="#sensor-watch-firmware">Sensor Watch Firmware</a></h1>
 <p>While you can build any number of bare-metal applications for Sensor Watch, when we refer to the Sensor Watch firmware, we're really talking about <em>Movement</em>, the community firmware for Sensor Watch. You can read more about Movement <a href="firmware/">here</a>; for now, the important thing to know is that it manages a series of <em>watch faces</em> that you advance through using the <em>mode</em> button. It's a very similar idiom to the classic Casio F-91W, which advances from <code>Clock -&gt; Alarm -&gt; Stopwatch -&gt; Time Set</code>, and then wraps around to <code>Clock</code>.</p>
-<p>The stock build of Movement offers many more watch faces — some of which, like World Clock, you can include more than once! Still: you'd be pressing the Mode button for hours if we included them all, so instead, we only build a subset of the available faces into any given firmware. This means that you can <a href="firmware/">build a custom firmware</a> download an anternate firmware that includes the kind of functionality you want, or build a custom firmware that includes just the watch faces you desire.</p>
-<p>This chapter is broken up into three sections, but I recommend you start here: <a href="firmware/prebuilt.html">Download prebuilt firmware for Sensor Watch</a>. If the prebuilt firmware options don't suit you, you can move on to <a href="firmware/building.html">building custom firmware for Sensor Watch</a>. Finally, if you want to try out different options without taking your watch apart again and again, you can also <a href="firmware/emulator.html">build custom firmware for the Sensor Watch Emulator</a>.</p>
+<p>Movement offers many more watch faces — some of which, like World Clock, you can include more than once! Still: you'd be pressing the Mode button for hours if we included them all, so instead, we only build a subset of the available faces into any given firmware. This means that you can <a href="firmware/">download an alternate firmware</a> that includes the kind of functionality you want, or <a href="firmware/">build custom firmware</a> that includes just the watch faces you desire.</p>
+<ul>
+<li><a href="firmware/prebuilt.html">Download prebuilt firmware for Sensor Watch</a></li>
+<li><a href="firmware/building.html">Building custom firmware for Sensor Watch</a></li>
+<li><a href="firmware/emulator.html">Building custom firmware for the Sensor Watch Emulator</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="prebuilt-alternative-firmware-for-sensor-watch"><a class="header" href="#prebuilt-alternative-firmware-for-sensor-watch">Prebuilt Alternative Firmware for Sensor Watch</a></h1>
 <p>This section contains the stock firmware for Sensor Watch, as well as several prebuilt firmwares featuring an alternative set of watch faces.</p>
 <h3 id="prebuilt-firmwares"><a class="header" href="#prebuilt-firmwares">Prebuilt Firmwares</a></h3>
 <p>Note that each fimware comes in two flavors, depending on the color of your circuit board. This is because blue boards have a red/blue LED and green boards have a red/green LED, and the pins are swapped. No damage will result from loading the wrong firmware onto your board, but the LED colors will be wrong. Also note that all of these have the &quot;Preferences&quot; and &quot;Time Set&quot; screens at the end; for brevity they aren't included in this listing, but you will always have access to them.</p>
 <ul>
 <li>Movement Standard: Simple Clock, World Clock, Sunrise/Sunset, Moon Phase, Temperature</li>
-<li>Hiking Friend: Simple Clock, Sunrise/Sunset, Temperature, Temperature Log, Blinky Light</li>
 <li>alt.time: Simple Clock, Beat Time, Day One</li>
-<li>The Optimizer: Simple Clock, Tomato Timer, Stopwatch, Countdown</li>
+<li>Focus: Simple Clock, Tomato Timer, Stopwatch, Countdown</li>
+<li>The Backpacker: Simple Clock, Sunrise/Sunset, Temperature, Temperature Log, Blinky Light</li>
 <li>The Athlete: Simple Clock, Stopwatch, Countdown, Exercise Counter, Pulsometer</li>
-<li>Stargazer: Simple Clock, Astronomy, Sunrise/Sunset, Moon Phase, Mars Time</li>
+<li>The Stargazer: Simple Clock, Astronomy, Sunrise/Sunset, Moon Phase</li>
 <li>Deep Space Now: Simple Clock, Mars Time, World Clock x3 (for Goldstone, Madrid and Canberra)</li>
 </ul>
 <h2 id="movement-standard"><a class="header" href="#movement-standard">Movement Standard</a></h2>
 <p><strong>Required Sensor Board: Temperature Sensor</strong></p>
-<p>Download it now: <a href="firmware/green/standard.uf2">Green Boards</a>, <a href="firmware/blue/standard.uf2">Blue Boards</a>. Try it out: <a href="https://joeycastillo.sdf.org/watch-firmware/standard/">Sensor Watch Emulator</a></p>
+<p>Download it now: <a href="firmware/download/standard-green.uf2">Green Boards</a>, <a href="firmware/download/standard-blue.uf2">Blue Boards</a>. Try it out: <a href="firmware/simulate/standard/">Sensor Watch Emulator</a></p>
 <p>This is the standard firmware for Movement. It's packed, but not jam-packed: </p>
 <ul>
 <li>Simple Clock - A basic clock with date for timekeeping.</li>
@@ -204,17 +208,6 @@
 <li>Sunrise/Sunset - Local sunrise and sunset times.</li>
 <li>Moon Phase - Today's moon phase. (press Alarm to see days in the future)</li>
 <li>Temperature - As measured from the temperature sensor board. (Alarm toggles C or F)</li>
-</ul>
-<h2 id="hiking-friend"><a class="header" href="#hiking-friend">Hiking Friend</a></h2>
-<p><strong>Required Sensor Board: Temperature Sensor</strong></p>
-<p><em>Download links coming soon.</em></p>
-<p>Similar in some ways to the standard firmware, this watch face is focused on helping you when out in the backcountry.</p>
-<ul>
-<li>Simple Clock - A basic clock with date for timekeeping.</li>
-<li>Sunrise/Sunset - Local sunrise and sunset times.</li>
-<li>Temperature - As measured from the temperature sensor board. (Alarm button toggles C or F)</li>
-<li>Temperature Log - A 36-hour log. Toss the watch outside your tent to measure overnight lows.</li>
-<li>Blinky Light - This will chew through your battery, but could be useful in an emergency.</li>
 </ul>
 <h2 id="alttime"><a class="header" href="#alttime">alt.time</a></h2>
 <p><em>Download links coming soon.</em></p>
@@ -225,7 +218,7 @@
 <li>Day One - Counts the number of days from a given date. Try plugging in your birthday!</li>
 </ul>
 <p>I hope to expand this face in the future. (International Fixed Calendar, anyone?)</p>
-<h2 id="the-optimizer"><a class="header" href="#the-optimizer">The Optimizer</a></h2>
+<h2 id="focus"><a class="header" href="#focus">Focus</a></h2>
 <p><em>Download links coming soon.</em></p>
 <p>For folks who want to use the watch for productivity.</p>
 <ul>
@@ -233,6 +226,17 @@
 <li>Tomato Timer (by Wesley Ellis) - A productivity timer varietal.</li>
 <li>Stopwatch (by Wesley Ellis) - A simple stopwatch with one-second resolution.</li>
 <li>Countdown (by Wesley Ellis) - A simple countdown timer for eggs, tea or tasks.</li>
+</ul>
+<h2 id="the-backpacker"><a class="header" href="#the-backpacker">The Backpacker</a></h2>
+<p><strong>Required Sensor Board: Temperature Sensor</strong></p>
+<p><em>Download links coming soon.</em></p>
+<p>Similar in some ways to the standard firmware, this watch face is focused on helping you when out in the backcountry.</p>
+<ul>
+<li>Simple Clock - A basic clock with date for timekeeping.</li>
+<li>Sunrise/Sunset - Local sunrise and sunset times.</li>
+<li>Temperature - As measured from the temperature sensor board. (Alarm button toggles C or F)</li>
+<li>Temperature Log - A 36-hour log. Toss the watch outside your tent to measure overnight lows.</li>
+<li>Blinky Light - This will chew through your battery, but could be useful in an emergency.</li>
 </ul>
 <h2 id="the-athlete"><a class="header" href="#the-athlete">The Athlete</a></h2>
 <p><em>Download links coming soon.</em></p>
@@ -244,7 +248,7 @@
 <li>Exercise Counter (by Shogo Okamoto) - Designed for tracking a number of exercises by pressing the Alarm button.</li>
 <li>Pulsometer - Hold the Alarm button while touching a vein on your neck, and count 30 beats. Release for your heart rate.</li>
 </ul>
-<h2 id="stargazer"><a class="header" href="#stargazer">Stargazer</a></h2>
+<h2 id="the-stargazer"><a class="header" href="#the-stargazer">The Stargazer</a></h2>
 <p><em>Download links coming soon.</em></p>
 <p>For folks who think space is the place.</p>
 <ul>
@@ -252,7 +256,6 @@
 <li>Astronomy - Calculates altitude, azimuth, right ascension and declination for all planets</li>
 <li>Sunrise/Sunset - Local sunrise and sunset times.</li>
 <li>Moon Phase - Today's moon phase. (press Alarm to see days in the future)</li>
-<li>Mars Time - Displays Mars Standard Time, or local mean solar time and mission sol for each active mission on Mars.</li>
 </ul>
 <h2 id="deep-space-now"><a class="header" href="#deep-space-now">Deep Space Now</a></h2>
 <p><em>Download links coming soon.</em></p>
@@ -263,6 +266,7 @@
 <li>World Clock - One slot for the ground station in Goldstone (California, USA)</li>
 <li>World Clock - One slot for the ground station in Madrid (Spain)</li>
 <li>World Clock - One slot for the ground station in Canberra (Australia)</li>
+<li>Day One - Counts the number of days from a given date. Try plugging in the start of a mission (i.e. August 20, 1977) to get mission day.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="movement-the-community-firmware-for-sensor-watch"><a class="header" href="#movement-the-community-firmware-for-sensor-watch">Movement: The Community Firmware for Sensor Watch</a></h1>
 <p><em>Movement</em> is an application that manages the display of different screens of content on the watch. These screens are called <em>watch faces</em>. Watch faces can be passive displays of information like a clock or a calendar, or they can be fully interactive user interfaces like the Preferences face, which allows the user to customize Movement's behavior.</p>
