@@ -37,7 +37,7 @@ Try it out: [Sensor Watch Emulator](simulate/standard/)
 Focus
 -----
 
-**Required Mod:** Countdown timer requires soldering the buzzer connector.
+**Required Mod:** Tomato and countdown timer requires soldering the buzzer connector.
 
 For folks who want to use the watch for productivity.
 
