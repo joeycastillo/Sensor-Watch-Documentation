@@ -5,6 +5,8 @@
   - [Prebuilt Firmware for Sensor Watch](firmware/prebuilt.md)
   - [Building Sensor Watch Firmware]()
   - [Building for the Sensor Watch Emulator]()
+- [Sensor Boards](sensorboards/README.md)
+  - [Temperature + GPIO Sensor Board](sensorboards/temperature.md)
 - [More about Movement](movement/README.md)
   - [Writing a watch face for Movement]()
   - [Contributing to the Community Firmware]()
