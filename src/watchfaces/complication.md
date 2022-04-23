@@ -3,7 +3,7 @@ Complications
 
 In horology, a complication is an additional set of gears in a mechanical watch movenent that enables a secondary function, such as a sunrise/sunset dial. The watch faces in this category do just that.
 
- * [Sunrise/Sunset](#sunrise-sunset)
+ * [Sunrise/Sunset](#sunrisesunset)
  * [Moon Phase](#moon-phase)
  * [Stopwatch](#stopwatch)
  * [Countdown](#countdown)
