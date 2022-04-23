@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Mars Time</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> The Sensor Watch</a></li><li class="chapter-item expanded "><a href="../firmware/index.html"><strong aria-hidden="true">2.</strong> Firmware Info</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../firmware/prebuilt.html"><strong aria-hidden="true">2.1.</strong> Prebuilt Firmware for Sensor Watch</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.2.</strong> Building Sensor Watch Firmware</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.3.</strong> Building for the Sensor Watch Emulator</div></li></ol></li><li class="chapter-item expanded "><a href="../watchfaces/index.html"><strong aria-hidden="true">3.</strong> Watch Face Documentation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../watchfaces/clock.html" class="active"><strong aria-hidden="true">3.1.</strong> Clocks</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../watchfaces/clock.html" class="active"><strong aria-hidden="true">3.1.1.</strong> Simple Clock</a></li><li class="chapter-item expanded "><a href="../watchfaces/clock.html" class="active"><strong aria-hidden="true">3.1.2.</strong> World Clock</a></li><li class="chapter-item expanded "><a href="../watchfaces/clock.html" class="active"><strong aria-hidden="true">3.1.3.</strong> Beat Time</a></li><li class="chapter-item expanded "><a href="../watchfaces/clock.html" class="active"><strong aria-hidden="true">3.1.4.</strong> Mars Time</a></li></ol></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.</strong> Complications</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.1.</strong> Sunrise/Sunset</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.2.</strong> Moon Phase</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.3.</strong> Stopwatch</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.4.</strong> Countdown</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.5.</strong> Counter</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.6.</strong> Pulsometer</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.7.</strong> Tomato Productivity Timer</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.8.</strong> TOTP Generator</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.9.</strong> Day One</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.10.</strong> Blinky Light</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.11.</strong> Astronomy</a></li><li class="chapter-item expanded "><a href="../watchfaces/complication.html"><strong aria-hidden="true">3.2.12.</strong> Orrery</a></li></ol></li><li class="chapter-item expanded "><a href="../watchfaces/sensor.html"><strong aria-hidden="true">3.3.</strong> Sensors</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../watchfaces/sensor.html"><strong aria-hidden="true">3.3.1.</strong> Voltage</a></li><li class="chapter-item expanded "><a href="../watchfaces/sensor.html"><strong aria-hidden="true">3.3.2.</strong> Temperature Display</a></li><li class="chapter-item expanded "><a href="../watchfaces/sensor.html"><strong aria-hidden="true">3.3.3.</strong> Temperature Log</a></li><li class="chapter-item expanded "><a href="../watchfaces/sensor.html"><strong aria-hidden="true">3.3.4.</strong> Temperature Testing</a></li><li class="chapter-item expanded "><a href="../watchfaces/sensor.html"><strong aria-hidden="true">3.3.5.</strong> LIS2DW Accelerometer Data Logger</a></li></ol></li><li class="chapter-item expanded "><a href="../watchfaces/settings.html"><strong aria-hidden="true">3.4.</strong> Settings</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../watchfaces/settings.html"><strong aria-hidden="true">3.4.1.</strong> Preferences</a></li><li class="chapter-item expanded "><a href="../watchfaces/settings.html"><strong aria-hidden="true">3.4.2.</strong> Time Set</a></li></ol></li><li class="chapter-item expanded "><a href="../watchfaces/demo.html"><strong aria-hidden="true">3.5.</strong> Demo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../watchfaces/demo.html"><strong aria-hidden="true">3.5.1.</strong> Character Set</a></li><li class="chapter-item expanded "><a href="../watchfaces/demo.html"><strong aria-hidden="true">3.5.2.</strong> Demo</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../movement/index.html"><strong aria-hidden="true">4.</strong> More about Movement</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Writing a watch face for Movement</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> Contributing to the Community Firmware</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Tips and tricks for Movement</div></li></ol></li><li class="chapter-item expanded "><a href="../sensorboards/index.html"><strong aria-hidden="true">5.</strong> Sensor Boards</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../sensorboards/temperature.html"><strong aria-hidden="true">5.1.</strong> Temperature + GPIO Sensor Board</a></li></ol></li><li class="chapter-item expanded "><a href="../wig/index.html"><strong aria-hidden="true">6.</strong> Watch Interface Guidelines (WIG)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../wig/bigpicture.html"><strong aria-hidden="true">6.1.</strong> Big Picture Stuff</a></li><li class="chapter-item expanded "><a href="../wig/display.html"><strong aria-hidden="true">6.2.</strong> Sensor Watch Display</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Sensor Watch Buttons</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Sensor Watch Power Management</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.5.</strong> Putting It All Together</div></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="clocks"><a class="header" href="#clocks">Clocks</a></h1>
+<p>The core function of a watch is telling time. All of the watch faces in this category tell time in one form or another.</p>
+<ul>
+<li><a href="#simple-clock">Simple Clock</a></li>
+<li><a href="#world-clock">World Clock</a></li>
+<li><a href="#beat-time">Beat Time</a></li>
+<li><a href="#mars-time">Mars Time</a></li>
+</ul>
+<h2 id="simple-clock"><a class="header" href="#simple-clock">Simple Clock</a></h2>
+<p>The Simple Clock watch face echoes the classic time and date display of the stock F-91W. It displays the day of the week and day of the month on the top line, along with the current time on the bottom line. Pressing the Light button illuminates the LED so that you can read the display in the dark. Holding the Light button keeps the LED on while the button is held.</p>
+<p>If you soldered the buzzer connector to your Sensor Watch board, you may also toggle the Hourly Chime feature by pressing and holding the Alarm button. When you release the Alarm button, the Signal indicator will turn on, indicating that the hourly chime is enabled.</p>
+<p>The Simple Clock face also incorporates a low battery warning: this watch face will display the LAP indicator when it detects that the battery voltage is low. This does not mean that power failure is imminent, but it does mean that your battery has only about 5% of its original capacity remaining and you should start thinking about a replacement. The battery is a CR2016 coin cell.</p>
+<h2 id="world-clock"><a class="header" href="#world-clock">World Clock</a></h2>
+<p>The World Clock watch face looks similar to the Simple Clock watch face, but you'll notice that at first launch the day of week indicators are blank. That's because this watch face does not display the day of the week. Instead, you may customize these letters to display the name of a time zone of your choosing.</p>
+<p>To customize this watch face, press and hold the Alarm button. The first letter in the top row will begin flashing. Press the Alarm button repeatedly to advance through the available letters in the first slot, then press the Light button to move to the second letter. Finally, press Light again to move to the time zone setting, and press Alarm to cycle through the available time zones. Press Light one last time to return to the world clock display.</p>
+<p>Note that the second slot cannot display all letters or numbers. Also note that at this time, time zones do not automatically update for daylight saving time; you will need to manually adjust this field each spring and fall.</p>
+<h2 id="beat-time"><a class="header" href="#beat-time">Beat Time</a></h2>
+<p>The Beat Time face displays the current Swatch Internet Time, or .beat time. This is a decimal time system that divides the day into 1000 beats.</p>
+<p>The three large digits in the bottom row indicate the current beat, and the two smaller digits (normally the seconds in Simple Clock) indicate the fractional beat; so for example you can read “672<small>14</small>” as “beat 672.14”.</p>
+<h2 id="mars-time"><a class="header" href="#mars-time">Mars Time</a></h2>
+<p>This watch face is dedicated to Martian timekeeping. It has several modes, and can display either a time or a date. Pressing the Alarm button cycles through different time zones on Mars:</p>
+<ul>
+<li>MC - Mars Coordinated Time, the time at Airy-0 Crater on the Martian prime meridian</li>
+<li>ZH - Local mean solar time for the Zhurong rover</li>
+<li>PE - LMST for the Perseverance rover</li>
+<li>IN - LMST for the Insight lander</li>
+<li>CU - LMST for the Curiousity rover</li>
+</ul>
+<p>Press the Light button to toggle between displaying time and date:</p>
+<ul>
+<li>MC S - the Mars Sol Date, Martian days since December 29, 1873</li>
+<li>ZH Sol - Mission sol for the Zhurong rover</li>
+<li>PE Sol - Mission sol for the Perseverance rover</li>
+<li>IN S - Mission sol for the InSight lander</li>
+<li>CU S - Mission sol for the Curiousity rover</li>
+</ul>
+<p>Note that where the mission sol is below 1000, this watch face displays the word “Sol” on the bottom line. When the mission sol is over 1000, the word “Sol” will not fit and so it displays a stylized letter S at the top right.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../watchfaces/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../watchfaces/clock.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../watchfaces/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../watchfaces/clock.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
