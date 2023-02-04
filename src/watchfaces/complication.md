@@ -6,7 +6,7 @@ In horology, a complication is an additional set of gears in a mechanical watch 
  * [Sunrise/Sunset](#sunrisesunset)
  * [Moon Phase](#moon-phase)
  * [Stopwatch](#stopwatch)
- * [Stock-Stopwatch](#stock-stopwatch)
+ * [Stock Stopwatch](#stock-stopwatch)
  * [Countdown](#countdown)
  * [Counter](#counter)
  * [Interval](#interval)
